@@ -14,4 +14,5 @@ Summoner yourSummoner = lol.getSummoner("Coizu");
 ```
 It's pretty much the same as accessing the API directly, so the naming for the methods should be pretty easy to get. Maybe I will add a documentation in the next few days if it's needed.
 
+
 This product is not endorsed, certified or otherwise approved in any way by Riot Games, Inc. or any of its affiliates.
