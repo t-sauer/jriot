@@ -21,8 +21,8 @@ public class JRiot {
 	private String apiKey;
 	private String region;
 	
-	private String baseURL1 = "http://prod.api.pvp.net/api/lol/na/v1.1/";
-	private String baseURL2 = "http://prod.api.pvp.net/api/na/v2.1/";
+	private String baseURL1 = "https://prod.api.pvp.net/api/lol/na/v1.1/";
+	private String baseURL2 = "https://prod.api.pvp.net/api/na/v2.1/";
 	
 	
 	Gson gson = new Gson();
@@ -56,8 +56,8 @@ public class JRiot {
 	 */
 	public void setRegion(String region) {
 		
-		this.baseURL1 = "http://prod.api.pvp.net/api/lol/" + region + "/v1.1/";
-		this.baseURL2 = "http://prod.api.pvp.net/api/" + region + "/v2.1/";
+		this.baseURL1 = "https://prod.api.pvp.net/api/lol/" + region + "/v1.1/";
+		this.baseURL2 = "https://prod.api.pvp.net/api/" + region + "/v2.1/";
 		
 		this.region = region;
 		
