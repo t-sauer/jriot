@@ -9,14 +9,12 @@ public class LeagueItem {
 	private long lastPlayed;
 	private String leagueName;
 	private int leaguePoints;
-	private int losses;
 	private MiniSeries miniSeries;
 	private String playerOrTeamId;
 	private String playerOrTeamName;
 	private String queueType;
 	private String rank;
 	private String tier;
-	private long timeUntilDecay;
 	private int wins;
 	public boolean isFreshBlood() {
 		return isFreshBlood;
@@ -60,12 +58,6 @@ public class LeagueItem {
 	public void setLeaguePoints(int leaguePoints) {
 		this.leaguePoints = leaguePoints;
 	}
-	public int getLosses() {
-		return losses;
-	}
-	public void setLosses(int losses) {
-		this.losses = losses;
-	}
 	public MiniSeries getMiniSeries() {
 		return miniSeries;
 	}
@@ -102,12 +94,6 @@ public class LeagueItem {
 	public void setTier(String tier) {
 		this.tier = tier;
 	}
-	public long getTimeUntilDecay() {
-		return timeUntilDecay;
-	}
-	public void setTimeUntilDecay(long timeUntilDecay) {
-		this.timeUntilDecay = timeUntilDecay;
-	}
 	public int getWins() {
 		return wins;
 	}
@@ -119,13 +105,13 @@ public class LeagueItem {
 		return "LeagueItem [isFreshBlood=" + isFreshBlood + ", isHotStreak="
 				+ isHotStreak + ", isInactive=" + isInactive + ", isVeteran="
 				+ isVeteran + ", lastPlayed=" + lastPlayed + ", leagueName="
-				+ leagueName + ", leaguePoints=" + leaguePoints + ", losses="
-				+ losses + ", miniSeries=" + miniSeries + ", playerOrTeamId="
+				+ leagueName + ", leaguePoints=" + leaguePoints
+				+ ", miniSeries=" + miniSeries + ", playerOrTeamId="
 				+ playerOrTeamId + ", playerOrTeamName=" + playerOrTeamName
 				+ ", queueType=" + queueType + ", rank=" + rank + ", tier="
-				+ tier + ", timeUntilDecay=" + timeUntilDecay + ", wins="
-				+ wins + "]";
+				+ tier + ", wins=" + wins + "]";
 	}
+
 	
 	
 

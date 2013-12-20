@@ -1,20 +1,18 @@
 package jriot.objects;
 
-import java.util.ArrayList;
-
 public class PlayerStatsSummary {
 	
-	private ArrayList<AggregatedStat> aggregatedStats;
+	private AggregatedStats aggregatedStats;
 	private int losses;
 	private long modifyDate;
 	private long modifyDateStr;
 	private String playerStatSummaryType;
 	private int wins;
 	
-	public ArrayList<AggregatedStat> getAggregatedStats() {
+	public AggregatedStats getAggregatedStats() {
 		return aggregatedStats;
 	}
-	public void setAggregatedStats(ArrayList<AggregatedStat> aggregatedStats) {
+	public void setAggregatedStats(AggregatedStats aggregatedStats) {
 		this.aggregatedStats = aggregatedStats;
 	}
 	public int getLosses() {

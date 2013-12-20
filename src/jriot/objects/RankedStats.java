@@ -6,7 +6,6 @@ public class RankedStats {
 	
 	private ArrayList<ChampionStats> champions;
 	private long modifyDate;
-	private long modifyDateStr;
 	private long summonerId;
 	
 	public ArrayList<ChampionStats> getChampions() {
@@ -21,12 +20,6 @@ public class RankedStats {
 	public void setModifyDate(long modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-	public long getModifyDateStr() {
-		return modifyDateStr;
-	}
-	public void setModifyDateStr(long modifyDateStr) {
-		this.modifyDateStr = modifyDateStr;
-	}
 	public long getSummonerId() {
 		return summonerId;
 	}
@@ -36,9 +29,9 @@ public class RankedStats {
 	@Override
 	public String toString() {
 		return "RankedStats [champions=" + champions + ", modifyDate="
-				+ modifyDate + ", modifyDateStr=" + modifyDateStr
-				+ ", summonerId=" + summonerId + "]";
+				+ modifyDate + ", summonerId=" + summonerId + "]";
 	}
+
 	
 	
 

@@ -8,12 +8,11 @@ public class League {
 	private String name;
 	private String queue;
 	private String tier;
-	private long timestamp;
 	
 	@Override
 	public String toString() {
 		return "League [entries=" + entries + ", name=" + name + ", queue="
-				+ queue + ", tier=" + tier + ", timestamp=" + timestamp + "]";
+				+ queue + ", tier=" + tier + "]";
 	}
 	public ArrayList<LeagueItem> getEntries() {
 		return entries;
@@ -38,12 +37,6 @@ public class League {
 	}
 	public void setTier(String tier) {
 		this.tier = tier;
-	}
-	public long getTimestamp() {
-		return timestamp;
-	}
-	public void setTimestamp(long timestamp) {
-		this.timestamp = timestamp;
 	}
 
 }

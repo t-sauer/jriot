@@ -3,7 +3,6 @@ package jriot.objects;
 public class MatchHistorySummary {
 	
 	private int assists;
-	private long date;
 	private int deaths;
 	private long gameId;
 	private String gameMode;
@@ -20,12 +19,6 @@ public class MatchHistorySummary {
 	}
 	public void setAssists(int assists) {
 		this.assists = assists;
-	}
-	public long getDate() {
-		return date;
-	}
-	public void setDate(long date) {
-		this.date = date;
 	}
 	public int getDeaths() {
 		return deaths;
@@ -83,12 +76,12 @@ public class MatchHistorySummary {
 	}
 	@Override
 	public String toString() {
-		return "MatchHistorySummary [assists=" + assists + ", date=" + date
-				+ ", deaths=" + deaths + ", gameId=" + gameId + ", gameMode="
-				+ gameMode + ", invalid=" + invalid + ", kills=" + kills
-				+ ", mapId=" + mapId + ", opposingTeamKills="
-				+ opposingTeamKills + ", opposingTeamName=" + opposingTeamName
-				+ ", win=" + win + "]";
+		return "MatchHistorySummary [assists=" + assists + ", deaths=" + deaths
+				+ ", gameId=" + gameId + ", gameMode=" + gameMode
+				+ ", invalid=" + invalid + ", kills=" + kills + ", mapId="
+				+ mapId + ", opposingTeamKills=" + opposingTeamKills
+				+ ", opposingTeamName=" + opposingTeamName + ", win=" + win
+				+ "]";
 	}
 	
 	

@@ -1,12 +1,10 @@
 package jriot.objects;
 
-import java.util.ArrayList;
-
 public class ChampionStats {
 	
 	private int id;
 	private String name;
-	private ArrayList<ChampionStat> stats;
+	private AggregatedStats stats;
 	
 	
 	@Override
@@ -26,10 +24,10 @@ public class ChampionStats {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public ArrayList<ChampionStat> getStats() {
+	public AggregatedStats getStats() {
 		return stats;
 	}
-	public void setStats(ArrayList<ChampionStat> stats) {
+	public void setStats(AggregatedStats stats) {
 		this.stats = stats;
 	}
 	

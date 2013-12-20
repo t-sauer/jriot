@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class MasteryPage {
 	
 	private boolean current;
+	private long id;
 	private String name;
 	private ArrayList<Talent> talents;
 	
@@ -14,6 +15,12 @@ public class MasteryPage {
 	}
 	public void setCurrent(boolean current) {
 		this.current = current;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;

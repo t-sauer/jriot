@@ -5,6 +5,7 @@ public class MessageOfDay {
 	private long createDate;
 	private String message;
 	private int version;
+	
 	public long getCreateDate() {
 		return createDate;
 	}

@@ -6,6 +6,7 @@ import java.util.Date;
 public class Team {
 	
 	private Date createDate;
+	private String fullId;
 	private Date lastGameDate;
 	private Date lastJoinDate;
 	private Date lastJoinedRankedTeamQueueDate;
@@ -17,10 +18,8 @@ public class Team {
 	private Date secondLastJoinDate;
 	private String status;
 	private String tag;
-	private TeamId teamId;
 	private TeamStatSummary teamStatSummary;
 	private Date thirdLastJoinDate;
-	private long timestamp;
 	
 	
 	public Date getCreateDate() {
@@ -95,12 +94,6 @@ public class Team {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-	public TeamId getTeamId() {
-		return teamId;
-	}
-	public void setTeamId(TeamId teamId) {
-		this.teamId = teamId;
-	}
 	public TeamStatSummary getTeamStatSummary() {
 		return teamStatSummary;
 	}
@@ -113,26 +106,26 @@ public class Team {
 	public void setThirdLastJoinDate(Date thirdLastJoinDate) {
 		this.thirdLastJoinDate = thirdLastJoinDate;
 	}
-	public long getTimestamp() {
-		return timestamp;
+	public String getFullId() {
+		return fullId;
 	}
-	public void setTimestamp(long timestamp) {
-		this.timestamp = timestamp;
+	public void setFullId(String fullId) {
+		this.fullId = fullId;
 	}
 	@Override
 	public String toString() {
-		return "Team [createDate=" + createDate + ", lastGameDate="
-				+ lastGameDate + ", lastJoinDate=" + lastJoinDate
-				+ ", lastJoinedRankedTeamQueueDate="
+		return "Team [createDate=" + createDate + ", fullId=" + fullId
+				+ ", lastGameDate=" + lastGameDate + ", lastJoinDate="
+				+ lastJoinDate + ", lastJoinedRankedTeamQueueDate="
 				+ lastJoinedRankedTeamQueueDate + ", matchHistory="
 				+ matchHistory + ", messageOfDay=" + messageOfDay
 				+ ", modifyDate=" + modifyDate + ", name=" + name + ", roster="
 				+ roster + ", secondLastJoinDate=" + secondLastJoinDate
-				+ ", status=" + status + ", tag=" + tag + ", teamId=" + teamId
-				+ ", teamStatSummary=" + teamStatSummary
-				+ ", thirdLastJoinDate=" + thirdLastJoinDate + ", timestamp="
-				+ timestamp + "]";
+				+ ", status=" + status + ", tag=" + tag + ", teamStatSummary="
+				+ teamStatSummary + ", thirdLastJoinDate=" + thirdLastJoinDate
+				+ "]";
 	}
+	
 	
 	
 

@@ -7,7 +7,7 @@ public class Game {
 	@Override
 	public String toString() {
 		return "Game [championId=" + championId + ", createDate=" + createDate
-				+ ", createDateStr=" + createDateStr + ", fellowPlayers="
+				+ ", fellowPlayers="
 				+ fellowPlayers + ", gameId=" + gameId + ", gameMode="
 				+ gameMode + ", gameType=" + gameType + ", invalid=" + invalid
 				+ ", level=" + level + ", mapId=" + mapId + ", spell1="
@@ -16,7 +16,6 @@ public class Game {
 	}
 	private int championId;
 	private long createDate;
-	private long createDateStr;
 	private ArrayList<Player> fellowPlayers;
 	private long gameId;
 	private String gameMode;
@@ -42,12 +41,6 @@ public class Game {
 	}
 	public void setCreateDate(long createDate) {
 		this.createDate = createDate;
-	}
-	public long getCreateDateStr() {
-		return createDateStr;
-	}
-	public void setCreateDateStr(long createDateStr) {
-		this.createDateStr = createDateStr;
 	}
 	public ArrayList<Player> getFellowPlayers() {
 		return fellowPlayers;
