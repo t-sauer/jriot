@@ -4,22 +4,22 @@ import java.util.Date;
 
 public class TeamMemberInfo {
 	
-	private Date inviteDate;
-	private Date joinDate;
+	private long inviteDate;
+	private long joinDate;
 	private long playerId;
 	private String status;
 	
 	
-	public Date getInviteDate() {
+	public long getInviteDate() {
 		return inviteDate;
 	}
-	public void setInviteDate(Date inviteDate) {
+	public void setInviteDate(long inviteDate) {
 		this.inviteDate = inviteDate;
 	}
-	public Date getJoinDate() {
+	public long getJoinDate() {
 		return joinDate;
 	}
-	public void setJoinDate(Date joinDate) {
+	public void setJoinDate(long joinDate) {
 		this.joinDate = joinDate;
 	}
 	public long getPlayerId() {

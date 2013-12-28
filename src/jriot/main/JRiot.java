@@ -1,5 +1,6 @@
 package jriot.main;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -221,10 +222,12 @@ public class JRiot {
 	 * @param summonerId Id of a summoner.
 	 * @return A list containing Team objects.
 	 */
-	public List<Team> getTeams(long summonerId) {
+	public ArrayList<Team> getTeams(long summonerId) {
 		ApiCaller caller = new ApiCaller();
 		String response = caller.request(this.baseUrl + region + "/v2.2/team/by-summoner/"+summonerId+"?api_key="+apiKey);
-		List<Team> team = gson.fromJson(response, List.class);
+		
+		
+		ArrayList<Team> team = gson.fromJson(response, new TypeToken<ArrayList<Team>>(){}.getType());
 		
 		return team;
 	}

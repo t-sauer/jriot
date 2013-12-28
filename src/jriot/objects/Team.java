@@ -1,49 +1,48 @@
 package jriot.objects;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Team {
 	
-	private Date createDate;
+	private long createDate;
 	private String fullId;
-	private Date lastGameDate;
-	private Date lastJoinDate;
-	private Date lastJoinedRankedTeamQueueDate;
+	private long lastGameDate;
+	private long lastJoinDate;
+	private long lastJoinedRankedTeamQueueDate;
 	private ArrayList<MatchHistorySummary> matchHistory;
 	private MessageOfDay messageOfDay;
-	private Date modifyDate;
+	private long modifyDate;
 	private String name;
 	private Roster roster;
-	private Date secondLastJoinDate;
+	private long secondLastJoinDate;
 	private String status;
 	private String tag;
 	private TeamStatSummary teamStatSummary;
-	private Date thirdLastJoinDate;
+	private long thirdLastJoinDate;
 	
 	
-	public Date getCreateDate() {
+	public long getCreateDate() {
 		return createDate;
 	}
-	public void setCreateDate(Date createDate) {
+	public void setCreateDate(long createDate) {
 		this.createDate = createDate;
 	}
-	public Date getLastGameDate() {
+	public long getLastGameDate() {
 		return lastGameDate;
 	}
-	public void setLastGameDate(Date lastGameDate) {
+	public void setLastGameDate(long lastGameDate) {
 		this.lastGameDate = lastGameDate;
 	}
-	public Date getLastJoinDate() {
+	public long getLastJoinDate() {
 		return lastJoinDate;
 	}
-	public void setLastJoinDate(Date lastJoinDate) {
+	public void setLastJoinDate(long lastJoinDate) {
 		this.lastJoinDate = lastJoinDate;
 	}
-	public Date getLastJoinedRankedTeamQueueDate() {
+	public long getLastJoinedRankedTeamQueueDate() {
 		return lastJoinedRankedTeamQueueDate;
 	}
-	public void setLastJoinedRankedTeamQueueDate(Date lastJoinedRankedTeamQueueDate) {
+	public void setLastJoinedRankedTeamQueueDate(long lastJoinedRankedTeamQueueDate) {
 		this.lastJoinedRankedTeamQueueDate = lastJoinedRankedTeamQueueDate;
 	}
 	public ArrayList<MatchHistorySummary> getMatchHistory() {
@@ -58,10 +57,10 @@ public class Team {
 	public void setMessageOfDay(MessageOfDay messageOfDay) {
 		this.messageOfDay = messageOfDay;
 	}
-	public Date getModifyDate() {
+	public long getModifyDate() {
 		return modifyDate;
 	}
-	public void setModifyDate(Date modifyDate) {
+	public void setModifyDate(long modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 	public String getName() {
@@ -76,10 +75,10 @@ public class Team {
 	public void setRoster(Roster roster) {
 		this.roster = roster;
 	}
-	public Date getSecondLastJoinDate() {
+	public long getSecondLastJoinDate() {
 		return secondLastJoinDate;
 	}
-	public void setSecondLastJoinDate(Date secondLastJoinDate) {
+	public void setSecondLastJoinDate(long secondLastJoinDate) {
 		this.secondLastJoinDate = secondLastJoinDate;
 	}
 	public String getStatus() {
@@ -100,10 +99,10 @@ public class Team {
 	public void setTeamStatSummary(TeamStatSummary teamStatSummary) {
 		this.teamStatSummary = teamStatSummary;
 	}
-	public Date getThirdLastJoinDate() {
+	public long getThirdLastJoinDate() {
 		return thirdLastJoinDate;
 	}
-	public void setThirdLastJoinDate(Date thirdLastJoinDate) {
+	public void setThirdLastJoinDate(long thirdLastJoinDate) {
 		this.thirdLastJoinDate = thirdLastJoinDate;
 	}
 	public String getFullId() {
