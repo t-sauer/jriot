@@ -226,7 +226,6 @@ public class JRiot {
 		ApiCaller caller = new ApiCaller();
 		String response = caller.request(this.baseUrl + region + "/v2.2/team/by-summoner/"+summonerId+"?api_key="+apiKey);
 		
-		
 		ArrayList<Team> team = gson.fromJson(response, new TypeToken<ArrayList<Team>>(){}.getType());
 		
 		return team;

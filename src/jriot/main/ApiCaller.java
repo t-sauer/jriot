@@ -23,6 +23,9 @@ public class ApiCaller {
 			connection.setRequestMethod("GET");
 			connection.setInstanceFollowRedirects(false); 
 			
+			if(connection.getResponseCode() == 404) {
+				return "[]";
+			}
 
 			InputStream is = connection.getInputStream();
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is));
