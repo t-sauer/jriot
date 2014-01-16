@@ -87,7 +87,7 @@ public class JRiot {
 	 */
 	public RecentGames getRecentGames(long summonerId) {
 		ApiCaller caller = new ApiCaller();
-		String response = caller.request(this.baseUrl + region + "/v1.2/game/by-summoner/"+summonerId+"/recent"+"?api_key="+apiKey);
+		String response = caller.request(this.baseUrl + region + "/v1.3/game/by-summoner/"+summonerId+"/recent"+"?api_key="+apiKey);
 		RecentGames recentGames = gson.fromJson(response, RecentGames.class);
 		
 		return recentGames;

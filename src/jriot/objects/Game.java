@@ -11,7 +11,7 @@ public class Game {
 				+ fellowPlayers + ", gameId=" + gameId + ", gameMode="
 				+ gameMode + ", gameType=" + gameType + ", invalid=" + invalid
 				+ ", level=" + level + ", mapId=" + mapId + ", spell1="
-				+ spell1 + ", spell2=" + spell2 + ", statistics=" + statistics
+				+ spell1 + ", spell2=" + spell2 + ", stats=" + stats
 				+ ", subType=" + subType + ", teamId=" + teamId + "]";
 	}
 	private int championId;
@@ -25,7 +25,7 @@ public class Game {
 	private int mapId;
 	private int spell1;
 	private int spell2;
-	private ArrayList<RawStat> statistics;
+	private RawStats stats;
 	private String subType;
 	private int teamId;
 	
@@ -96,11 +96,11 @@ public class Game {
 	public void setSpell2(int spell2) {
 		this.spell2 = spell2;
 	}
-	public ArrayList<RawStat> getStatistics() {
-		return statistics;
+	public RawStats getStats() {
+		return stats;
 	}
-	public void setStatistics(ArrayList<RawStat> statistics) {
-		this.statistics = statistics;
+	public void setStats(RawStats stats) {
+		this.stats = stats;
 	}
 	public String getSubType() {
 		return subType;
