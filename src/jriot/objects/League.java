@@ -6,14 +6,11 @@ public class League {
 	
 	private ArrayList<LeagueItem> entries;
 	private String name;
+	private String participantId;
 	private String queue;
 	private String tier;
 	
-	@Override
-	public String toString() {
-		return "League [entries=" + entries + ", name=" + name + ", queue="
-				+ queue + ", tier=" + tier + "]";
-	}
+
 	public ArrayList<LeagueItem> getEntries() {
 		return entries;
 	}
@@ -37,6 +34,18 @@ public class League {
 	}
 	public void setTier(String tier) {
 		this.tier = tier;
+	}
+	public String getParticipantId() {
+		return participantId;
+	}
+	public void setParticipantId(String participantId) {
+		this.participantId = participantId;
+	}
+	@Override
+	public String toString() {
+		return "League [entries=" + entries + ", name=" + name
+				+ ", participantId=" + participantId + ", queue=" + queue
+				+ ", tier=" + tier + "]";
 	}
 
 }

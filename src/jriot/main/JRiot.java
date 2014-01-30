@@ -101,10 +101,10 @@ public class JRiot {
 	 * @return Returns a map of either the summonerId (in case of solo queue) 
 	 * 			or the teamId with the corresponding league.
 	 */
-	public Map<String, League> getLeagues(long summonerId) {
+	public ArrayList<League> getLeagues(long summonerId) {
 		ApiCaller caller = new ApiCaller();
-		String response = caller.request(this.baseUrl + region + "/v2.2/league/by-summoner/"+summonerId+"?api_key="+apiKey);
-		Map<String, League> leagues =  gson.fromJson(response, new TypeToken<Map<String, League>>(){}.getType());
+		String response = caller.request(this.baseUrl + region + "/v2.3/league/by-summoner/"+summonerId+"?api_key="+apiKey);
+		ArrayList<League> leagues =  gson.fromJson(response, new TypeToken<ArrayList<League>>(){}.getType());
 		
 		return leagues;
 		
