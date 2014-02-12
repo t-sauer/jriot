@@ -117,7 +117,7 @@ public class JRiot {
      * Retrieve all Teams currently in Challenger RANKED_TEAM_5x5
      *
      * @return Returns a League object which wraps all leagueItems for
-     * challenger team_5vs5
+     * challenger team_5vs5.
      * @throws JRiotException
      */
     public League getChallengerTeam5x5() throws JRiotException {
@@ -131,7 +131,7 @@ public class JRiot {
      * Retrieve all Teams currently in Challenger RANKED_TEAM_3x3
      *
      * @return Returns a League object which wraps all leagueItems for
-     * challenger team_3vs3
+     * challenger team_3vs3.
      * @throws JRiotException
      */
     public League getChallengerTeam3x3() throws JRiotException {
@@ -142,8 +142,8 @@ public class JRiot {
     }
 
     /**
-     * Get the current leagues entry data for a summoner including all of
-     * summoner's teams
+     * Get the current league entry data for a summoner including all of the
+     * summoner's teams.
      *
      * @param summonerId Id of a summoner
      * @return Returns a list containing all league entries
@@ -220,7 +220,7 @@ public class JRiot {
     }
 
     /**
-     * Get all Mastery Pages of a given List of summoner IDs.
+     * Get all Mastery Pages of a given List of summoners.
      *
      * @param summonerIds Ids of summoners.
      * @return MasteryPages mapped by summoner ID
@@ -253,7 +253,7 @@ public class JRiot {
     }
 
     /**
-     * Get all Rune Pages of a given List of summoner IDs.
+     * Get all Rune Pages of a given List of summoners.
      *
      * @param summonerIds Ids of summoners.
      * @return RunePages mapped by summoner ID
@@ -272,7 +272,7 @@ public class JRiot {
     }
 
     /**
-     * Get information about a given summoner id.
+     * Get information about a given summoner.
      *
      * @param summonerId Id of a summoner.
      * @return Summoner object, containing information.
@@ -286,7 +286,7 @@ public class JRiot {
     }
 
     /**
-     * Get information about a given List of summoner IDs.
+     * Get information about a given List of summoners.
      *
      * @param summonerIds Id of a summoner.
      * @return Summoner object, containing information.
@@ -306,7 +306,7 @@ public class JRiot {
     }
 
     /**
-     * Get information about a given summoner name.
+     * Get information about a given summoner.
      *
      * @param summonerName Name of a summoner.
      * @return Summoner object, containing information.
@@ -320,7 +320,7 @@ public class JRiot {
     }
 
     /**
-     * Get information about a given List of summoner names.
+     * Get information about a given List of summoners.
      *
      * @param summonerNames List of summoner names.
      * @return Summoner object, containing information.
