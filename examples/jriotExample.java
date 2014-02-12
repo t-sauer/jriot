@@ -13,7 +13,7 @@ public class jriotExample {
         JRiot lol = new JRiot();
 
         // Set your API Key
-        lol.setApiKey("YOUR_API_KEY_HERE");
+        lol.setApiKey("YOUR_API_KEY");
         // Set the region
         lol.setRegion("euw");
         try {
@@ -30,10 +30,10 @@ public class jriotExample {
             List<Long> summonerIds = new ArrayList<Long>();
             summonerIds.add(summoner.getId());
 
-            SummonerNameList summoners = lol.getSummoners(summonerIds);
+            Map<String, Summoner> summoners = lol.getSummonersById(summonerIds);
 
             // Get leagues of a summoner
-            Map<String, League> leagues = lol.getLeagues(summoner.getId());
+            List<League> leagues = lol.getLeagues(summoner.getId());
 
             // Get mastery pages of a summoner
             MasteryPages masteryPages = lol.getMasteryPages(summoner.getId());

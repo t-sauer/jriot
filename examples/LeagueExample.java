@@ -1,6 +1,5 @@
 
 import java.util.List;
-import java.util.Map;
 
 import jriot.main.JRiot;
 import jriot.main.JRiotException;
@@ -15,23 +14,18 @@ public class LeagueExample {
         // Initialize jriot
         JRiot lol = new JRiot();
 
-        lol.setApiKey("3b807db0-9dec-4051-a156-dccedc3a1728");
+        lol.setApiKey("YOUR_API_KEY");
         lol.setRegion("euw");
 
         try {
             // Get Summoner information
             Summoner summoner = lol.getSummoner("Coizu");
-
             // Get all leagues
-            Map<String, League> leagues = lol.getLeagues(summoner.getId());
-
+            List<League> leagues = lol.getLeagues(summoner.getId());
             // Iterate through all leagues
-            for (Map.Entry<String, League> entry : leagues.entrySet()) {
+            for (League league : leagues) {
 
-                // Get the League out of the Map
-                League league = entry.getValue();
-
-                    // Check if Soloqueue
+                // Check if Soloqueue
                 // (could also be done with the key of the map)
                 if (league.getQueue().equals("RANKED_SOLO_5x5")) {
 
