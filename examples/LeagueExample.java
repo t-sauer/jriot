@@ -4,7 +4,7 @@ import java.util.List;
 import jriot.main.JRiot;
 import jriot.main.JRiotException;
 import jriot.objects.League;
-import jriot.objects.LeagueItem;
+import jriot.objects.LeagueEntry;
 import jriot.objects.Summoner;
 
 public class LeagueExample {
@@ -14,12 +14,12 @@ public class LeagueExample {
         // Initialize jriot
         JRiot lol = new JRiot();
 
-        lol.setApiKey("YOUR_API_KEY");
+        lol.setApiKey("37973cdc-3ed2-4032-a609-bb27d2541dd9");
         lol.setRegion("euw");
 
         try {
             // Get Summoner information
-            Summoner summoner = lol.getSummoner("Coizu");
+            Summoner summoner = lol.getSummoner("CowichanBay");
             // Get all leagues
             List<League> leagues = lol.getLeagues(summoner.getId());
             // Iterate through all leagues
@@ -36,16 +36,16 @@ public class LeagueExample {
                     System.out.println("Tier: " + league.getTier());
 
                     // Get all divisions of the league
-                    List<LeagueItem> leagueItems = league.getEntries();
+                    List<LeagueEntry> leagueItems = league.getEntries();
 
                     // Go through all divisions
-                    for (LeagueItem leagueItem : leagueItems) {
+                    for (LeagueEntry leagueItem : leagueItems) {
 
                         // Check if the summoner we are looking for is in the division
                         if (Long.parseLong(leagueItem.getPlayerOrTeamId()) == summoner.getId()) {
 
                             // Print some stuff about the division
-                            System.out.println("Division: " + leagueItem.getRank());
+                            System.out.println("Division: " + leagueItem.getDivision());
                             System.out.println("Wins: " + leagueItem.getWins());
                         }
 

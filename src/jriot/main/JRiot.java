@@ -11,7 +11,6 @@ import jriot.objects.Champion;
 import jriot.objects.ChampionList;
 
 import jriot.objects.League;
-import jriot.objects.LeagueItem;
 import jriot.objects.MasteryPages;
 import jriot.objects.PlayerStatsSummaryList;
 import jriot.objects.RankedStats;
@@ -25,20 +24,21 @@ public class JRiot {
     private String apiKey;
     private String region = "na";
 
+    public static final String RANKED_SOLO_5x5 = "RANKED_SOLO_5x5";
+    public static final String RANKED_TEAM_5x5 = "RANKED_TEAM_5x5";
+    public static final String RANKED_TEAM_3x3 = "RANKED_TEAM_3x3";
+
     private final String baseUrl = "https://prod.api.pvp.net/api/lol/";
 
     Gson gson = new Gson();
     ApiCaller caller = new ApiCaller();
 
     public JRiot(String key, String region) {
-        super();
-
-        this.setApiKey(key);
-        this.setRegion(region);
+        this.apiKey = key;
+        this.region = region;
     }
 
     public JRiot() {
-        super();
     }
 
     /**
@@ -97,7 +97,7 @@ public class JRiot {
     }
 
     /**
-     * Get recently played games by a given summoner.
+     * Get recent games by summoner ID.
      *
      * @param summonerId Id of a summoner.
      * @return RecentGames objects which contains the last played games.
@@ -107,76 +107,148 @@ public class JRiot {
         String response = caller.request(this.baseUrl + region + "/v1.3/game/by-summoner/" + summonerId + "/recent" + "?api_key=" + apiKey);
         RecentGames recentGames = gson.fromJson(response, RecentGames.class);
         return recentGames;
-
     }
 
     /**
-     * Retrieve all Summoners currently in Challenger RANKED_SOLO_5x5
+     * Get Challenger tier leagues
      *
-     * @return Returns a League object which wraps all 200 leagueItems for
-     * challenger solo
+     * @param queue
+     * @return Returns a League object for challenger solo
      * @throws JRiotException
      */
-    public League getChallengerSolo5x5() throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.3/league/challenger" + "?type=RANKED_SOLO_5x5&api_key=" + apiKey);
+    public League getChallenger(String queue) throws JRiotException {
+        String response = caller.request(this.baseUrl + region + "/v2.4/league/challenger" + "?type=" + queue + "&api_key=" + apiKey);
         League challenger = gson.fromJson(response, League.class);
         return challenger;
     }
 
     /**
-     * Retrieve all Teams currently in Challenger RANKED_TEAM_5x5
+     * Get league entries by summoner ID for a given summoner ID.
      *
-     * @return Returns a League object which wraps all leagueItems for
-     * challenger team_5vs5.
-     * @throws JRiotException
-     */
-    public League getChallengerTeam5x5() throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.3/league/challenger" + "?type=RANKED_TEAM_5x5&api_key=" + apiKey);
-        League challenger = gson.fromJson(response, League.class);
-        return challenger;
-    }
-
-    /**
-     * Retrieve all Teams currently in Challenger RANKED_TEAM_3x3
-     *
-     * @return Returns a League object which wraps all leagueItems for
-     * challenger team_3vs3.
-     * @throws JRiotException
-     */
-    public League getChallengerTeam3x3() throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.3/league/challenger" + "?type=RANKED_TEAM_3x3&api_key=" + apiKey);
-        League challenger = gson.fromJson(response, League.class);
-        return challenger;
-    }
-
-    /**
-     * Get the current league entry data for a summoner including all of the
-     * summoner's teams.
-     *
-     * @param summonerId Id of a summoner
+     * @param summonerId Ids of summoners
      * @return Returns a list containing all league entries
      * @throws JRiotException
      */
-    public List<LeagueItem> getLeagueEntry(long summonerId) throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.3/league/by-summoner/" + summonerId + "/entry" + "?api_key=" + apiKey);
-        List<LeagueItem> leagueEntry = gson.fromJson(response, new TypeToken<List<LeagueItem>>() {
-        }.getType());
-        return leagueEntry;
+    public List<League> getLeagueEntries(long summonerId) throws JRiotException {
+        ArrayList<Long> id = new ArrayList<>();
+        id.add(summonerId);
+        Map<String, List<League>> leagueEntries = getLeagueEntries(id);
+        return leagueEntries.get(Long.toString(summonerId));
     }
 
     /**
-     * Get all leagues of a given summoner.
+     * Get league entries mapped by summoner ID for a given list of summoner
+     * IDs.
      *
-     * @param summonerId Id of a summoner.
+     * @param summonerIds Ids of summoners
+     * @return Returns a Lists containing all league entries mapped by summoner;
+     * @throws JRiotException
+     */
+    public Map<String, List<League>> getLeagueEntries(List<Long> summonerIds) throws JRiotException {
+        String ids = "";
+        for (long i : summonerIds) {
+            ids = ids + i + ",";
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-summoner/" + ids + "/entry" + "?api_key=" + apiKey);
+        Map<String, List<League>> leagueEntries = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
+        }.getType());
+        return leagueEntries;
+    }
+
+    /**
+     * Get league entries by team ID for a given team ID.
+     *
+     * @param teamId Ids of summoners
+     * @return Returns a list containing all league entries
+     * @throws JRiotException
+     */
+    public List<League> getLeagueEntriesByTeam(String teamId) throws JRiotException {
+        ArrayList<String> id = new ArrayList<>();
+        id.add(teamId);
+        Map<String, List<League>> leagueEntries = getLeagueEntriesByTeam(id);
+        return leagueEntries.get(teamId);
+    }
+
+    /**
+     * Get league entries mapped by team ID for a given list of team IDs.
+     *
+     * @param teamIds Ids of teams
+     * @return Returns a Lists containing all league entries mapped by summoner;
+     * @throws JRiotException
+     */
+    public Map<String, List<League>> getLeagueEntriesByTeam(List<String> teamIds) throws JRiotException {
+        String ids = "";
+        for (String i : teamIds) {
+            ids = ids + i + ",";
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-team/" + ids + "/entry" + "?api_key=" + apiKey);
+        Map<String, List<League>> leagueEntries = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
+        }.getType());
+        return leagueEntries;
+    }
+
+    /**
+     * Get leagues mapped by summoner ID for a given list of summoner IDs.
+     *
+     * @param summonerIds Ids of summoners
+     * @return Returns a Lists containing all leagues mapped by summoner;
+     * @throws jriot.main.JRiotException
+     */
+    public Map<String, List<League>> getLeagues(List<Long> summonerIds) throws JRiotException {
+        String ids = "";
+        for (long i : summonerIds) {
+            ids = ids + i + ",";
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-summoner/" + ids + "?api_key=" + apiKey);
+        Map<String, List<League>> leagues = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
+        }.getType());
+        return leagues;
+    }
+
+    /**
+     * Get leagues for a given summoner ID..
+     *
+     * @param summonerId Id of summoner
      * @return Returns a List containing all leagues of a summoner.
      * @throws jriot.main.JRiotException
      */
     public List<League> getLeagues(long summonerId) throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.3/league/by-summoner/" + summonerId + "?api_key=" + apiKey);
-        List<League> leagues = gson.fromJson(response, new TypeToken<List<League>>() {
+        ArrayList<Long> id = new ArrayList<>();
+        id.add(summonerId);
+        Map<String, List<League>> leagues = getLeagues(id);
+        return leagues.get(Long.toString(summonerId));
+    }
+
+    /**
+     * Get leagues mapped by team ID for a given list of team IDs.
+     *
+     * @param teamIds Ids of team
+     * @return Returns a Lists containing all leagues mapped by team;
+     * @throws jriot.main.JRiotException
+     */
+    public Map<String, List<League>> getLeaguesByTeams(List<String> teamIds) throws JRiotException {
+        String ids = "";
+        for (String i : teamIds) {
+            ids = ids + i + ",";
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-team/" + ids + "?api_key=" + apiKey);
+        Map<String, List<League>> leagues = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
         }.getType());
         return leagues;
+    }
 
+    /**
+     * Get leagues for a given team ID..
+     *
+     * @param teamId Id of team
+     * @return Returns a List containing all leagues of a team.
+     * @throws jriot.main.JRiotException
+     */
+    public List<League> getLeaguesByTeam(String teamId) throws JRiotException {
+        ArrayList<String> id = new ArrayList<>();
+        id.add(teamId);
+        Map<String, List<League>> leagues = getLeaguesByTeams(id);
+        return leagues.get(teamId);
     }
 
     /**
@@ -235,7 +307,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.3/summoner/" + ids + "/masteries?api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/masteries?api_key=" + apiKey);
         Map<String, MasteryPages> masteryPages = gson.fromJson(response, new TypeToken<Map<String, MasteryPages>>() {
         }.getType());
         return masteryPages;
@@ -267,7 +339,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.3/summoner/" + ids + "/runes?api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/runes?api_key=" + apiKey);
         Map<String, RunePages> masteryPages = gson.fromJson(response, new TypeToken<Map<String, RunePages>>() {
         }.getType());
         return masteryPages;
@@ -300,7 +372,7 @@ public class JRiot {
             ids = ids + i + ",";
         }
         Gson gson = new GsonBuilder().setDateFormat("MM/dd/yyy HH:mm").create();
-        String response = caller.request(this.baseUrl + region + "/v1.3/summoner/" + ids + "?api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "?api_key=" + apiKey);
         Map<String, Summoner> summoner = gson.fromJson(response, new TypeToken<Map<String, Summoner>>() {
         }.getType());
         return summoner;
@@ -333,7 +405,7 @@ public class JRiot {
             names = names + i + ",";
         }
         Gson gson = new GsonBuilder().setDateFormat("MM/dd/yyy HH:mm").create();
-        String response = caller.request(this.baseUrl + region + "/v1.3/summoner/by-name/" + names + "?api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/by-name/" + names + "?api_key=" + apiKey);
         Map<String, Summoner> summoner = gson.fromJson(response, new TypeToken<Map<String, Summoner>>() {
         }.getType());
         return summoner;
@@ -351,7 +423,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.3/summoner/" + ids + "/name?api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/name?api_key=" + apiKey);
         Map<String, String> summonerNameMap = gson.fromJson(response, new TypeToken<Map<String, String>>() {
         }.getType());
         return summonerNameMap;
