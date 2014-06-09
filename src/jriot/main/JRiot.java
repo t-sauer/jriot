@@ -443,6 +443,14 @@ public class JRiot {
         return summonerName.get(Long.toString(summonerId));
     }
 
+    public List<Team> getTeams(long summonerId) throws JRiotException {
+        ArrayList<Long> ids = new ArrayList<>();
+        ids.add(summonerId);
+
+        Map<String, List<Team>> teams = getTeamsBySummoner(ids);
+        return teams.get(Long.toString(summonerId));
+    }
+
     /**
      * Get all teams of a given summoner.
      *
