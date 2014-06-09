@@ -446,15 +446,39 @@ public class JRiot {
     /**
      * Get all teams of a given summoner.
      *
-     * @param summonerId Id of a summoner.
+     * @param summonerIds Id of a summoner.
      * @return A list containing Team objects.
      * @throws JRiotException
      */
-    public List<Team> getTeams(long summonerId) throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v2.2/team/by-summoner/" + summonerId + "?api_key=" + apiKey);
-        List<Team> team = gson.fromJson(response, new TypeToken<List<Team>>() {
+    public Map<String, List<Team>> getTeamsBySummoner(List<Long> summonerIds) throws JRiotException {
+        String ids = "";
+        for (long i : summonerIds) {
+            ids = ids + i + ",";
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.3/team/by-summoner/" + ids + "?api_key=" + apiKey);
+        Map<String, List<Team>> teams = gson.fromJson(response, new TypeToken<Map<String, List<Team>>>() {
         }.getType());
-        return team;
+        return teams;
+    }
+
+    /**
+     * Get teams mapped by team ID for a given list of team IDs.
+     *
+     * @param teamIds
+     * @return
+     * @throws JRiotException
+     */
+    public Map<String, Team> getTeams(List<String> teamIds) throws JRiotException {
+        StringBuilder builder = new StringBuilder();
+        for (String s : teamIds) {
+            builder.append(s);
+            builder.append(",");
+        }
+        String response = caller.request(this.baseUrl + region + "/v2.3/team/" + builder.toString() + "?api_key=" + apiKey);
+
+        Map<String, Team> teams = gson.fromJson(response, new TypeToken<Map<String, Team>>() {
+        }.getType());
+        return teams;
     }
 
 }

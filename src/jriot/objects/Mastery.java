@@ -23,7 +23,7 @@ public class Mastery {
 
     @Override
     public String toString() {
-        return "Talent [id=" + id + ", rank=" + rank + "]";
+        return "Mastery [id=" + id + ", rank=" + rank + "]";
     }
 
 }

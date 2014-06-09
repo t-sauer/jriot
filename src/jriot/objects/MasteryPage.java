@@ -6,7 +6,7 @@ public class MasteryPage {
 
     private boolean current;
     private long id;
-    private ArrayList<Mastery> talents;
+    private ArrayList<Mastery> masteries;
     private String name;
 
     public boolean isCurrent() {
@@ -33,17 +33,19 @@ public class MasteryPage {
         this.name = name;
     }
 
-    public ArrayList<Mastery> getTalents() {
-        return talents;
+    public ArrayList<Mastery> getMasteries() {
+        return masteries;
     }
 
-    public void setTalents(ArrayList<Mastery> talents) {
-        this.talents = talents;
+    public void setMasteries(ArrayList<Mastery> masteries) {
+        this.masteries = masteries;
     }
 
     @Override
     public String toString() {
-        return "MasteryPage{" + "current=" + current + ", id=" + id + ", talents=" + talents + ", name=" + name + '}';
+        return "MasteryPage{" + "current=" + current + ", id=" + id + ", masteries=" + masteries + ", name=" + name + '}';
     }
+    
+    
 
 }
