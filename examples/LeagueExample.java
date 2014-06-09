@@ -14,12 +14,12 @@ public class LeagueExample {
         // Initialize jriot
         JRiot lol = new JRiot();
 
-        lol.setApiKey("37973cdc-3ed2-4032-a609-bb27d2541dd9");
+        lol.setApiKey("YOUR_API_KEY");
         lol.setRegion("euw");
 
         try {
             // Get Summoner information
-            Summoner summoner = lol.getSummoner("CowichanBay");
+            Summoner summoner = lol.getSummoner("Coizu");
             // Get all leagues
             List<League> leagues = lol.getLeagues(summoner.getId());
             // Iterate through all leagues

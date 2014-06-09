@@ -28,7 +28,7 @@ public class SoloQueueStatsExample {
                 for(ChampionStats championStats : rankedStats.getChampions()) {
                     
                     // Print championname
-                    System.out.println(championStats.getName());
+                    System.out.println(championStats.getId());
                     
                     // Get AggregatedStats for a champion
                     AggregatedStats aggregatedStats = championStats.getStats();

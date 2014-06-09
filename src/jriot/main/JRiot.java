@@ -261,7 +261,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public PlayerStatsSummaryList getPlayerStatsSummaryList(long summonerId, int season) throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v1.2/stats/by-summoner/" + summonerId + "/summary" + "?season=SEASON" + season + "&api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/summary" + "?season=SEASON" + season + "&api_key=" + apiKey);
         PlayerStatsSummaryList playerStatsSummaryList = gson.fromJson(response, PlayerStatsSummaryList.class);
         return playerStatsSummaryList;
     }
@@ -276,7 +276,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public RankedStats getRankedStats(long summonerId, int season) throws JRiotException {
-        String response = caller.request(this.baseUrl + region + "/v1.2/stats/by-summoner/" + summonerId + "/ranked" + "?season=SEASON" + season + "&api_key=" + apiKey);
+        String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/ranked" + "?season=SEASON" + season + "&api_key=" + apiKey);
         RankedStats rankedStats = gson.fromJson(response, RankedStats.class);
         return rankedStats;
     }
