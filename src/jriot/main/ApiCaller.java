@@ -27,7 +27,7 @@ public class ApiCaller {
             }
 
             InputStream is = connection.getInputStream();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is,"utf-8"));
             String line;
             StringBuffer response = new StringBuffer();
 
