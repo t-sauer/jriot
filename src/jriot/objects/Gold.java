@@ -1,49 +1,41 @@
 package jriot.objects;
 
-public class Gold
-{
-	private int base;
-	private int sell;
-	private int total;
-	private boolean purchasable;
+public class Gold {
 
-	public int getBase()
-	{
-		return base;
-	}
+    private int base;
+    private int sell;
+    private int total;
+    private boolean purchasable;
 
-	public void setBase(int base)
-	{
-		this.base = base;
-	}
+    public int getBase() {
+        return base;
+    }
 
-	public int getSell()
-	{
-		return sell;
-	}
+    public void setBase(int base) {
+        this.base = base;
+    }
 
-	public void setSell(int sell)
-	{
-		this.sell = sell;
-	}
+    public int getSell() {
+        return sell;
+    }
 
-	public int getTotal()
-	{
-		return total;
-	}
+    public void setSell(int sell) {
+        this.sell = sell;
+    }
 
-	public void setTotal(int total)
-	{
-		this.total = total;
-	}
+    public int getTotal() {
+        return total;
+    }
 
-	public boolean getPurchasable()
-	{
-		return purchasable;
-	}
+    public void setTotal(int total) {
+        this.total = total;
+    }
 
-	public void setPurchasable(boolean purchasable)
-	{
-		this.purchasable = purchasable;
-	}
+    public boolean getPurchasable() {
+        return purchasable;
+    }
+
+    public void setPurchasable(boolean purchasable) {
+        this.purchasable = purchasable;
+    }
 }

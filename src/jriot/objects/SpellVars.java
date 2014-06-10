@@ -2,111 +2,52 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class SpellVars
-{
-	private ArrayList<Double> coeff;
-	private String dyn;
-	private String key;
-	private String link;
-	private String ranksWith;
+public class SpellVars {
 
-	/**
-	 * Returns coeff.
-	 *
-	 * @return ArrayList<double> coeff.
-	 */
-	public ArrayList<Double> getCoeff()
-	{
-		return coeff;
-	}
+    private ArrayList<Double> coeff;
+    private String dyn;
+    private String key;
+    private String link;
+    private String ranksWith;
 
-	/**
-	 * Sets coeff.
-	 *
-	 * @param coeff coeff.
-	 */
-	public void setCoeff(ArrayList<Double> coeff)
-	{
-		this.coeff = coeff;
-	}
+    public ArrayList<Double> getCoeff() {
+        return coeff;
+    }
 
-	/**
-	 * Returns dyn.
-	 *
-	 * @return String dyn.
-	 */
-	public String getDyn()
-	{
-		return dyn;
-	}
+    public void setCoeff(ArrayList<Double> coeff) {
+        this.coeff = coeff;
+    }
 
-	/**
-	 * Sets dyn.
-	 *
-	 * @param dyn dyn.
-	 */
-	public void setDyn(String dyn)
-	{
-		this.dyn = dyn;
-	}
+    public String getDyn() {
+        return dyn;
+    }
 
-	/**
-	 * Returns key.
-	 *
-	 * @return String key.
-	 */
-	public String getKey()
-	{
-		return key;
-	}
+    public void setDyn(String dyn) {
+        this.dyn = dyn;
+    }
 
-	/**
-	 * Sets key.
-	 *
-	 * @param key key.
-	 */
-	public void setKey(String key)
-	{
-		this.key = key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	/**
-	 * Returns link.
-	 *
-	 * @return String link.
-	 */
-	public String getLink()
-	{
-		return link;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	/**
-	 * Sets link.
-	 *
-	 * @param link link.
-	 */
-	public void setLink(String link)
-	{
-		this.link = link;
-	}
+    public String getLink() {
+        return link;
+    }
 
-	/**
-	 * Returns ranksWith.
-	 *
-	 * @return String ranksWith.
-	 */
-	public String getRanksWith()
-	{
-		return ranksWith;
-	}
+    public void setLink(String link) {
+        this.link = link;
+    }
 
-	/**
-	 * Sets ranksWith.
-	 *
-	 * @param ranksWith ranksWith.
-	 */
-	public void setRanksWith(String ranksWith)
-	{
-		this.ranksWith = ranksWith;
-	}
+    public String getRanksWith() {
+        return ranksWith;
+    }
+
+    public void setRanksWith(String ranksWith) {
+        this.ranksWith = ranksWith;
+    }
+
 }

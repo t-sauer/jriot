@@ -2,17 +2,15 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class MasteryTreeList
-{
-	private ArrayList<MasteryTreeItem> masteryTreeItems;
+public class MasteryTreeList {
 
-	public ArrayList<MasteryTreeItem> getMasteryTreeItems()
-	{
-		return masteryTreeItems;
-	}
+    private ArrayList<MasteryTreeItem> masteryTreeItems;
 
-	public void setMasteryTreeItems(ArrayList<MasteryTreeItem> masteryTreeItems)
-	{
-		this.masteryTreeItems = masteryTreeItems;
-	}
+    public ArrayList<MasteryTreeItem> getMasteryTreeItems() {
+        return masteryTreeItems;
+    }
+
+    public void setMasteryTreeItems(ArrayList<MasteryTreeItem> masteryTreeItems) {
+        this.masteryTreeItems = masteryTreeItems;
+    }
 }

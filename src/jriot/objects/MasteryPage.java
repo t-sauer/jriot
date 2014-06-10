@@ -45,7 +45,5 @@ public class MasteryPage {
     public String toString() {
         return "MasteryPage{" + "current=" + current + ", id=" + id + ", masteries=" + masteries + ", name=" + name + '}';
     }
-    
-    
 
 }

@@ -1,50 +1,43 @@
 package jriot.objects;
+
 import java.util.Map;
 
-public class MasteryList
-{
-	private Map<String, Mastery> data;
-	private MasteryTree tree;
-	private String type;
-	private String version;
+public class MasteryList {
 
-	public Map<String, Mastery> getData()
-	{
-		return data;
-	}
+    private Map<String, Mastery> data;
+    private MasteryTree tree;
+    private String type;
+    private String version;
 
-	public void setData(Map<String, Mastery> data)
-	{
-		this.data = data;
-	}
+    public Map<String, Mastery> getData() {
+        return data;
+    }
 
-	public MasteryTree getTree()
-	{
-		return tree;
-	}
+    public void setData(Map<String, Mastery> data) {
+        this.data = data;
+    }
 
-	public void setTree(MasteryTree tree)
-	{
-		this.tree = tree;
-	}
+    public MasteryTree getTree() {
+        return tree;
+    }
 
-	public String getType()
-	{
-		return type;
-	}
+    public void setTree(MasteryTree tree) {
+        this.tree = tree;
+    }
 
-	public void setType(String type)
-	{
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getVersion()
-	{
-		return version;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setVersion(String version)
-	{
-		this.version = version;
-	}
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }

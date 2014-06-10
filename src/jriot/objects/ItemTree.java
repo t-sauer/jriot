@@ -2,28 +2,24 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class ItemTree
-{
-	private String header;
-	private ArrayList<String> tags;
+public class ItemTree {
 
-	public String getHeader()
-	{
-		return header;
-	}
+    private String header;
+    private ArrayList<String> tags;
 
-	public void setHeader(String header)
-	{
-		this.header = header;
-	}
+    public String getHeader() {
+        return header;
+    }
 
-	public ArrayList<String> getTags()
-	{
-		return tags;
-	}
+    public void setHeader(String header) {
+        this.header = header;
+    }
 
-	public void setTags(ArrayList<String> tags)
-	{
-		this.tags = tags;
-	}
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
 }

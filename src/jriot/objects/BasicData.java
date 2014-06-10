@@ -3,260 +3,214 @@ package jriot.objects;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class BasicData
-{
-	private String colloq;
-	private boolean consumeOnFull;
-	private boolean consumed;
-	private int depth;
-	private String description;
-	private ArrayList<String> from;
-	private Gold gold;
-	private String group;
-	private boolean hideFromAll;
-	private int id;
-	private Image image;
-	private boolean inStore;
-	private ArrayList<String> into;
-	private Map<String, Boolean> maps;
-	private String name;
-	private String plaintext;
-	private String RequiredChampion;
-	private MetaData rune;
-	private String sanitizedDescription;
-	private int specialRecipe;
-	private int stacks;
-	private BasicDataStats stats;
-	private ArrayList<String> tags;
-	
-	public String getColloq()
-	{
-		return colloq;
-	}
+public class BasicData {
 
-	public void setColloq(String colloq)
-	{
-		this.colloq = colloq;
-	}
+    private String colloq;
+    private boolean consumeOnFull;
+    private boolean consumed;
+    private int depth;
+    private String description;
+    private ArrayList<String> from;
+    private Gold gold;
+    private String group;
+    private boolean hideFromAll;
+    private int id;
+    private Image image;
+    private boolean inStore;
+    private ArrayList<String> into;
+    private Map<String, Boolean> maps;
+    private String name;
+    private String plaintext;
+    private String RequiredChampion;
+    private MetaData rune;
+    private String sanitizedDescription;
+    private int specialRecipe;
+    private int stacks;
+    private BasicDataStats stats;
+    private ArrayList<String> tags;
 
-	public boolean getConsumeOnFull()
-	{
-		return consumeOnFull;
-	}
+    public String getColloq() {
+        return colloq;
+    }
 
-	public void setConsumeOnFull(boolean consumeOnFull)
-	{
-		this.consumeOnFull = consumeOnFull;
-	}
+    public void setColloq(String colloq) {
+        this.colloq = colloq;
+    }
 
-	public boolean getConsumed()
-	{
-		return consumed;
-	}
+    public boolean getConsumeOnFull() {
+        return consumeOnFull;
+    }
 
-	public void setConsumed(boolean consumed)
-	{
-		this.consumed = consumed;
-	}
+    public void setConsumeOnFull(boolean consumeOnFull) {
+        this.consumeOnFull = consumeOnFull;
+    }
 
-	public int getDepth()
-	{
-		return depth;
-	}
+    public boolean getConsumed() {
+        return consumed;
+    }
 
-	public void setDepth(int depth)
-	{
-		this.depth = depth;
-	}
+    public void setConsumed(boolean consumed) {
+        this.consumed = consumed;
+    }
 
-	public String getDescription()
-	{
-		return description;
-	}
+    public int getDepth() {
+        return depth;
+    }
 
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
+    public void setDepth(int depth) {
+        this.depth = depth;
+    }
 
-	public ArrayList<String> getFrom()
-	{
-		return from;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setFrom(ArrayList<String> from)
-	{
-		this.from = from;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public Gold getGold()
-	{
-		return gold;
-	}
+    public ArrayList<String> getFrom() {
+        return from;
+    }
 
-	public void setGold(Gold gold)
-	{
-		this.gold = gold;
-	}
+    public void setFrom(ArrayList<String> from) {
+        this.from = from;
+    }
 
-	public String getGroup()
-	{
-		return group;
-	}
+    public Gold getGold() {
+        return gold;
+    }
 
-	public void setGroup(String group)
-	{
-		this.group = group;
-	}
+    public void setGold(Gold gold) {
+        this.gold = gold;
+    }
 
-	public boolean getHideFromAll()
-	{
-		return hideFromAll;
-	}
+    public String getGroup() {
+        return group;
+    }
 
-	public void setHideFromAll(boolean hideFromAll)
-	{
-		this.hideFromAll = hideFromAll;
-	}
+    public void setGroup(String group) {
+        this.group = group;
+    }
 
-	public int getId()
-	{
-		return id;
-	}
+    public boolean getHideFromAll() {
+        return hideFromAll;
+    }
 
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+    public void setHideFromAll(boolean hideFromAll) {
+        this.hideFromAll = hideFromAll;
+    }
 
-	public Image getImage()
-	{
-		return image;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public boolean getInStore()
-	{
-		return inStore;
-	}
+    public Image getImage() {
+        return image;
+    }
 
-	public void setInStore(boolean inStore)
-	{
-		this.inStore = inStore;
-	}
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
-	public ArrayList<String> getInto()
-	{
-		return into;
-	}
+    public boolean getInStore() {
+        return inStore;
+    }
 
-	public void setInto(ArrayList<String> into)
-	{
-		this.into = into;
-	}
+    public void setInStore(boolean inStore) {
+        this.inStore = inStore;
+    }
 
-	public Map<String, Boolean> getMaps()
-	{
-		return maps;
-	}
+    public ArrayList<String> getInto() {
+        return into;
+    }
 
-	public void setMaps(Map<String, Boolean> maps)
-	{
-		this.maps = maps;
-	}
+    public void setInto(ArrayList<String> into) {
+        this.into = into;
+    }
 
-	public String getName()
-	{
-		return name;
-	}
+    public Map<String, Boolean> getMaps() {
+        return maps;
+    }
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+    public void setMaps(Map<String, Boolean> maps) {
+        this.maps = maps;
+    }
 
-	public String getPlaintext()
-	{
-		return plaintext;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPlaintext(String plaintext)
-	{
-		this.plaintext = plaintext;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getRequiredChampion()
-	{
-		return RequiredChampion;
-	}
+    public String getPlaintext() {
+        return plaintext;
+    }
 
-	public void setRequiredChampion(String RequiredChampion)
-	{
-		this.RequiredChampion = RequiredChampion;
-	}
+    public void setPlaintext(String plaintext) {
+        this.plaintext = plaintext;
+    }
 
-	public MetaData getRune()
-	{
-		return rune;
-	}
+    public String getRequiredChampion() {
+        return RequiredChampion;
+    }
 
-	public void setRune(MetaData rune)
-	{
-		this.rune = rune;
-	}
+    public void setRequiredChampion(String RequiredChampion) {
+        this.RequiredChampion = RequiredChampion;
+    }
 
-	public String getSanitizedDescription()
-	{
-		return sanitizedDescription;
-	}
+    public MetaData getRune() {
+        return rune;
+    }
 
-	public void setSanitizedDescription(String sanitizedDescription)
-	{
-		this.sanitizedDescription = sanitizedDescription;
-	}
+    public void setRune(MetaData rune) {
+        this.rune = rune;
+    }
 
-	public int getSpecialRecipe()
-	{
-		return specialRecipe;
-	}
+    public String getSanitizedDescription() {
+        return sanitizedDescription;
+    }
 
-	public void setSpecialRecipe(int specialRecipe)
-	{
-		this.specialRecipe = specialRecipe;
-	}
+    public void setSanitizedDescription(String sanitizedDescription) {
+        this.sanitizedDescription = sanitizedDescription;
+    }
 
-	public int getStacks()
-	{
-		return stacks;
-	}
+    public int getSpecialRecipe() {
+        return specialRecipe;
+    }
 
-	public void setStacks(int stacks)
-	{
-		this.stacks = stacks;
-	}
+    public void setSpecialRecipe(int specialRecipe) {
+        this.specialRecipe = specialRecipe;
+    }
 
-	public BasicDataStats getStats()
-	{
-		return stats;
-	}
+    public int getStacks() {
+        return stacks;
+    }
 
-	public void setStats(BasicDataStats stats)
-	{
-		this.stats = stats;
-	}
+    public void setStacks(int stacks) {
+        this.stacks = stacks;
+    }
 
-	public ArrayList<String> getTags()
-	{
-		return tags;
-	}
+    public BasicDataStats getStats() {
+        return stats;
+    }
 
-	public void setTags(ArrayList<String> tags)
-	{
-		this.tags = tags;
-	}
+    public void setStats(BasicDataStats stats) {
+        this.stats = stats;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
 
 }

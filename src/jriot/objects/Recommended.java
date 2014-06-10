@@ -2,154 +2,70 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class Recommended
-{
-	private ArrayList<Block> blocks;
-	private String champion;
-	private String map;
-	private String mode;
-	private boolean priority;
-	private String title;
-	private String type;
-	
-	
-	/**
-	 * Returns blocks.
-	 *
-	 * @return ArrayList<Block> blocks.
-	 */
-	public ArrayList<Block> getBlocks()
-	{
-		return blocks;
-	}
+public class Recommended {
 
-	/**
-	 * Sets blocks.
-	 *
-	 * @param blocks blocks.
-	 */
-	public void setBlocks(ArrayList<Block> blocks)
-	{
-		this.blocks = blocks;
-	}
+    private ArrayList<Block> blocks;
+    private String champion;
+    private String map;
+    private String mode;
+    private boolean priority;
+    private String title;
+    private String type;
 
-	/**
-	 * Returns champion.
-	 *
-	 * @return String champion.
-	 */
-	public String getChampion()
-	{
-		return champion;
-	}
+    public ArrayList<Block> getBlocks() {
+        return blocks;
+    }
 
-	/**
-	 * Sets champion.
-	 *
-	 * @param champion champion.
-	 */
-	public void setChampion(String champion)
-	{
-		this.champion = champion;
-	}
+    public void setBlocks(ArrayList<Block> blocks) {
+        this.blocks = blocks;
+    }
 
-	/**
-	 * Returns map.
-	 *
-	 * @return String map.
-	 */
-	public String getMap()
-	{
-		return map;
-	}
+    public String getChampion() {
+        return champion;
+    }
 
-	/**
-	 * Sets map.
-	 *
-	 * @param map map.
-	 */
-	public void setMap(String map)
-	{
-		this.map = map;
-	}
+    public void setChampion(String champion) {
+        this.champion = champion;
+    }
 
-	/**
-	 * Returns mode.
-	 *
-	 * @return String mode.
-	 */
-	public String getMode()
-	{
-		return mode;
-	}
+    public String getMap() {
+        return map;
+    }
 
-	/**
-	 * Sets mode.
-	 *
-	 * @param mode mode.
-	 */
-	public void setMode(String mode)
-	{
-		this.mode = mode;
-	}
+    public void setMap(String map) {
+        this.map = map;
+    }
 
-	/**
-	 * Returns priority.
-	 *
-	 * @return boolean priority.
-	 */
-	public boolean getPriority()
-	{
-		return priority;
-	}
+    public String getMode() {
+        return mode;
+    }
 
-	/**
-	 * Sets priority.
-	 *
-	 * @param priority priority.
-	 */
-	public void setPriority(boolean priority)
-	{
-		this.priority = priority;
-	}
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
 
-	/**
-	 * Returns title.
-	 *
-	 * @return String title.
-	 */
-	public String getTitle()
-	{
-		return title;
-	}
+    public boolean isPriority() {
+        return priority;
+    }
 
-	/**
-	 * Sets title.
-	 *
-	 * @param title title.
-	 */
-	public void setTitle(String title)
-	{
-		this.title = title;
-	}
+    public void setPriority(boolean priority) {
+        this.priority = priority;
+    }
 
-	/**
-	 * Returns type.
-	 *
-	 * @return String type.
-	 */
-	public String getType()
-	{
-		return type;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	/**
-	 * Sets type.
-	 *
-	 * @param type type.
-	 */
-	public void setType(String type)
-	{
-		this.type = type;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

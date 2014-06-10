@@ -1,68 +1,34 @@
 package jriot.objects;
 
-public class Skin
-{
-	private int id;
-	private String name;
-	private int num;
+public class Skin {
 
-	/**
-	 * Returns id.
-	 *
-	 * @return int id.
-	 */
-	public int getId()
-	{
-		return id;
-	}
+    private int id;
+    private String name;
+    private int num;
 
-	/**
-	 * Sets id.
-	 *
-	 * @param id id.
-	 */
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	/**
-	 * Returns name.
-	 *
-	 * @return String name.
-	 */
-	public String getName()
-	{
-		return name;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	/**
-	 * Sets name.
-	 *
-	 * @param name name.
-	 */
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * Returns num.
-	 *
-	 * @return int num.
-	 */
-	public int getNum()
-	{
-		return num;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * Sets num.
-	 *
-	 * @param num num.
-	 */
-	public void setNum(int num)
-	{
-		this.num = num;
-	}
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    
 }

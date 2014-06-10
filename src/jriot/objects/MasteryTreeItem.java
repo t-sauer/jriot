@@ -1,27 +1,23 @@
 package jriot.objects;
 
-public class MasteryTreeItem
-{
-	private int masteryId;
-	private String prereq;
+public class MasteryTreeItem {
 
-	public int getMasteryId()
-	{
-		return masteryId;
-	}
+    private int masteryId;
+    private String prereq;
 
-	public void setMasteryId(int masteryId)
-	{
-		this.masteryId = masteryId;
-	}
+    public int getMasteryId() {
+        return masteryId;
+    }
 
-	public String getPrereq()
-	{
-		return prereq;
-	}
+    public void setMasteryId(int masteryId) {
+        this.masteryId = masteryId;
+    }
 
-	public void setPrereq(String prereq)
-	{
-		this.prereq = prereq;
-	}
+    public String getPrereq() {
+        return prereq;
+    }
+
+    public void setPrereq(String prereq) {
+        this.prereq = prereq;
+    }
 }

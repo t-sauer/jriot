@@ -1,425 +1,186 @@
 package jriot.objects;
 
-public class Stats
-{
-	private double armor;
-	private double armorperlevel;
-	private double attackdamage;
-	private double attackdamageperlevel;
-	private double attackrange;
-	private double attackspeedoffset;
-	private double attackspeedperlevel;
-	private double crit;
-	private double critperlevel;
-	private double hp;
-	private double hpperlevel;
-	private double hpregen;
-	private double hpregenperlevel;
-	private double movespeed;
-	private double mp;
-	private double mpperlevel;
-	private double mpregen;
-	private double mpregenperlevel;
-	private double spellblock;
-	private double spellblockperlevel;
+public class Stats {
 
-	/**
-	 * Returns armor.
-	 *
-	 * @return double armor.
-	 */
-	public double getArmor()
-	{
-		return armor;
-	}
+    private double armor;
+    private double armorperlevel;
+    private double attackdamage;
+    private double attackdamageperlevel;
+    private double attackrange;
+    private double attackspeedoffset;
+    private double attackspeedperlevel;
+    private double crit;
+    private double critperlevel;
+    private double hp;
+    private double hpperlevel;
+    private double hpregen;
+    private double hpregenperlevel;
+    private double movespeed;
+    private double mp;
+    private double mpperlevel;
+    private double mpregen;
+    private double mpregenperlevel;
+    private double spellblock;
+    private double spellblockperlevel;
 
-	/**
-	 * Sets armor.
-	 *
-	 * @param armor armor.
-	 */
-	public void setArmor(double armor)
-	{
-		this.armor = armor;
-	}
+    public double getArmor() {
+        return armor;
+    }
 
-	/**
-	 * Returns armorperlevel.
-	 *
-	 * @return double armorperlevel.
-	 */
-	public double getArmorperlevel()
-	{
-		return armorperlevel;
-	}
+    public void setArmor(double armor) {
+        this.armor = armor;
+    }
 
-	/**
-	 * Sets armorperlevel.
-	 *
-	 * @param armorperlevel armorperlevel.
-	 */
-	public void setArmorperlevel(double armorperlevel)
-	{
-		this.armorperlevel = armorperlevel;
-	}
+    public double getArmorperlevel() {
+        return armorperlevel;
+    }
 
-	/**
-	 * Returns attackdamage.
-	 *
-	 * @return double attackdamage.
-	 */
-	public double getAttackdamage()
-	{
-		return attackdamage;
-	}
+    public void setArmorperlevel(double armorperlevel) {
+        this.armorperlevel = armorperlevel;
+    }
 
-	/**
-	 * Sets attackdamage.
-	 *
-	 * @param attackdamage attackdamage.
-	 */
-	public void setAttackdamage(double attackdamage)
-	{
-		this.attackdamage = attackdamage;
-	}
+    public double getAttackdamage() {
+        return attackdamage;
+    }
 
-	/**
-	 * Returns attackdamageperlevel.
-	 *
-	 * @return double attackdamageperlevel.
-	 */
-	public double getAttackdamageperlevel()
-	{
-		return attackdamageperlevel;
-	}
+    public void setAttackdamage(double attackdamage) {
+        this.attackdamage = attackdamage;
+    }
 
-	/**
-	 * Sets attackdamageperlevel.
-	 *
-	 * @param attackdamageperlevel attackdamageperlevel.
-	 */
-	public void setAttackdamageperlevel(double attackdamageperlevel)
-	{
-		this.attackdamageperlevel = attackdamageperlevel;
-	}
+    public double getAttackdamageperlevel() {
+        return attackdamageperlevel;
+    }
 
-	/**
-	 * Returns attackrange.
-	 *
-	 * @return double attackrange.
-	 */
-	public double getAttackrange()
-	{
-		return attackrange;
-	}
+    public void setAttackdamageperlevel(double attackdamageperlevel) {
+        this.attackdamageperlevel = attackdamageperlevel;
+    }
 
-	/**
-	 * Sets attackrange.
-	 *
-	 * @param attackrange attackrange.
-	 */
-	public void setAttackrange(double attackrange)
-	{
-		this.attackrange = attackrange;
-	}
+    public double getAttackrange() {
+        return attackrange;
+    }
 
-	/**
-	 * Returns attackspeedoffset.
-	 *
-	 * @return double attackspeedoffset.
-	 */
-	public double getAttackspeedoffset()
-	{
-		return attackspeedoffset;
-	}
+    public void setAttackrange(double attackrange) {
+        this.attackrange = attackrange;
+    }
 
-	/**
-	 * Sets attackspeedoffset.
-	 *
-	 * @param attackspeedoffset attackspeedoffset.
-	 */
-	public void setAttackspeedoffset(double attackspeedoffset)
-	{
-		this.attackspeedoffset = attackspeedoffset;
-	}
+    public double getAttackspeedoffset() {
+        return attackspeedoffset;
+    }
 
-	/**
-	 * Returns attackspeedperlevel.
-	 *
-	 * @return double attackspeedperlevel.
-	 */
-	public double getAttackspeedperlevel()
-	{
-		return attackspeedperlevel;
-	}
+    public void setAttackspeedoffset(double attackspeedoffset) {
+        this.attackspeedoffset = attackspeedoffset;
+    }
 
-	/**
-	 * Sets attackspeedperlevel.
-	 *
-	 * @param attackspeedperlevel attackspeedperlevel.
-	 */
-	public void setAttackspeedperlevel(double attackspeedperlevel)
-	{
-		this.attackspeedperlevel = attackspeedperlevel;
-	}
+    public double getAttackspeedperlevel() {
+        return attackspeedperlevel;
+    }
 
-	/**
-	 * Returns crit.
-	 *
-	 * @return double crit.
-	 */
-	public double getCrit()
-	{
-		return crit;
-	}
+    public void setAttackspeedperlevel(double attackspeedperlevel) {
+        this.attackspeedperlevel = attackspeedperlevel;
+    }
 
-	/**
-	 * Sets crit.
-	 *
-	 * @param crit crit.
-	 */
-	public void setCrit(double crit)
-	{
-		this.crit = crit;
-	}
+    public double getCrit() {
+        return crit;
+    }
 
-	/**
-	 * Returns critperlevel.
-	 *
-	 * @return double critperlevel.
-	 */
-	public double getCritperlevel()
-	{
-		return critperlevel;
-	}
+    public void setCrit(double crit) {
+        this.crit = crit;
+    }
 
-	/**
-	 * Sets critperlevel.
-	 *
-	 * @param critperlevel critperlevel.
-	 */
-	public void setCritperlevel(double critperlevel)
-	{
-		this.critperlevel = critperlevel;
-	}
+    public double getCritperlevel() {
+        return critperlevel;
+    }
 
-	/**
-	 * Returns hp.
-	 *
-	 * @return double hp.
-	 */
-	public double getHp()
-	{
-		return hp;
-	}
+    public void setCritperlevel(double critperlevel) {
+        this.critperlevel = critperlevel;
+    }
 
-	/**
-	 * Sets hp.
-	 *
-	 * @param hp hp.
-	 */
-	public void setHp(double hp)
-	{
-		this.hp = hp;
-	}
+    public double getHp() {
+        return hp;
+    }
 
-	/**
-	 * Returns hpperlevel.
-	 *
-	 * @return double hpperlevel.
-	 */
-	public double getHpperlevel()
-	{
-		return hpperlevel;
-	}
+    public void setHp(double hp) {
+        this.hp = hp;
+    }
 
-	/**
-	 * Sets hpperlevel.
-	 *
-	 * @param hpperlevel hpperlevel.
-	 */
-	public void setHpperlevel(double hpperlevel)
-	{
-		this.hpperlevel = hpperlevel;
-	}
+    public double getHpperlevel() {
+        return hpperlevel;
+    }
 
-	/**
-	 * Returns hpregen.
-	 *
-	 * @return double hpregen.
-	 */
-	public double getHpregen()
-	{
-		return hpregen;
-	}
+    public void setHpperlevel(double hpperlevel) {
+        this.hpperlevel = hpperlevel;
+    }
 
-	/**
-	 * Sets hpregen.
-	 *
-	 * @param hpregen hpregen.
-	 */
-	public void setHpregen(double hpregen)
-	{
-		this.hpregen = hpregen;
-	}
+    public double getHpregen() {
+        return hpregen;
+    }
 
-	/**
-	 * Returns hpregenperlevel.
-	 *
-	 * @return double hpregenperlevel.
-	 */
-	public double getHpregenperlevel()
-	{
-		return hpregenperlevel;
-	}
+    public void setHpregen(double hpregen) {
+        this.hpregen = hpregen;
+    }
 
-	/**
-	 * Sets hpregenperlevel.
-	 *
-	 * @param hpregenperlevel hpregenperlevel.
-	 */
-	public void setHpregenperlevel(double hpregenperlevel)
-	{
-		this.hpregenperlevel = hpregenperlevel;
-	}
+    public double getHpregenperlevel() {
+        return hpregenperlevel;
+    }
 
-	/**
-	 * Returns movespeed.
-	 *
-	 * @return double movespeed.
-	 */
-	public double getMovespeed()
-	{
-		return movespeed;
-	}
+    public void setHpregenperlevel(double hpregenperlevel) {
+        this.hpregenperlevel = hpregenperlevel;
+    }
 
-	/**
-	 * Sets movespeed.
-	 *
-	 * @param movespeed movespeed.
-	 */
-	public void setMovespeed(double movespeed)
-	{
-		this.movespeed = movespeed;
-	}
+    public double getMovespeed() {
+        return movespeed;
+    }
 
-	/**
-	 * Returns mp.
-	 *
-	 * @return double mp.
-	 */
-	public double getMp()
-	{
-		return mp;
-	}
+    public void setMovespeed(double movespeed) {
+        this.movespeed = movespeed;
+    }
 
-	/**
-	 * Sets mp.
-	 *
-	 * @param mp mp.
-	 */
-	public void setMp(double mp)
-	{
-		this.mp = mp;
-	}
+    public double getMp() {
+        return mp;
+    }
 
-	/**
-	 * Returns mpperlevel.
-	 *
-	 * @return double mpperlevel.
-	 */
-	public double getMpperlevel()
-	{
-		return mpperlevel;
-	}
+    public void setMp(double mp) {
+        this.mp = mp;
+    }
 
-	/**
-	 * Sets mpperlevel.
-	 *
-	 * @param mpperlevel mpperlevel.
-	 */
-	public void setMpperlevel(double mpperlevel)
-	{
-		this.mpperlevel = mpperlevel;
-	}
+    public double getMpperlevel() {
+        return mpperlevel;
+    }
 
-	/**
-	 * Returns mpregen.
-	 *
-	 * @return double mpregen.
-	 */
-	public double getMpregen()
-	{
-		return mpregen;
-	}
+    public void setMpperlevel(double mpperlevel) {
+        this.mpperlevel = mpperlevel;
+    }
 
-	/**
-	 * Sets mpregen.
-	 *
-	 * @param mpregen mpregen.
-	 */
-	public void setMpregen(double mpregen)
-	{
-		this.mpregen = mpregen;
-	}
+    public double getMpregen() {
+        return mpregen;
+    }
 
-	/**
-	 * Returns mpregenperlevel.
-	 *
-	 * @return double mpregenperlevel.
-	 */
-	public double getMpregenperlevel()
-	{
-		return mpregenperlevel;
-	}
+    public void setMpregen(double mpregen) {
+        this.mpregen = mpregen;
+    }
 
-	/**
-	 * Sets mpregenperlevel.
-	 *
-	 * @param mpregenperlevel mpregenperlevel.
-	 */
-	public void setMpregenperlevel(double mpregenperlevel)
-	{
-		this.mpregenperlevel = mpregenperlevel;
-	}
+    public double getMpregenperlevel() {
+        return mpregenperlevel;
+    }
 
-	/**
-	 * Returns spellblock.
-	 *
-	 * @return double spellblock.
-	 */
-	public double getSpellblock()
-	{
-		return spellblock;
-	}
+    public void setMpregenperlevel(double mpregenperlevel) {
+        this.mpregenperlevel = mpregenperlevel;
+    }
 
-	/**
-	 * Sets spellblock.
-	 *
-	 * @param spellblock spellblock.
-	 */
-	public void setSpellblock(double spellblock)
-	{
-		this.spellblock = spellblock;
-	}
+    public double getSpellblock() {
+        return spellblock;
+    }
 
-	/**
-	 * Returns spellblockperlevel.
-	 *
-	 * @return double spellblockperlevel.
-	 */
-	public double getSpellblockperlevel()
-	{
-		return spellblockperlevel;
-	}
+    public void setSpellblock(double spellblock) {
+        this.spellblock = spellblock;
+    }
 
-	/**
-	 * Sets spellblockperlevel.
-	 *
-	 * @param spellblockperlevel spellblockperlevel.
-	 */
-	public void setSpellblockperlevel(double spellblockperlevel)
-	{
-		this.spellblockperlevel = spellblockperlevel;
-	}
+    public double getSpellblockperlevel() {
+        return spellblockperlevel;
+    }
+
+    public void setSpellblockperlevel(double spellblockperlevel) {
+        this.spellblockperlevel = spellblockperlevel;
+    }
+
 }

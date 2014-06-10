@@ -2,69 +2,33 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class Block
-{
-	private ArrayList<BlockItem> items;
-	private boolean recMath;
-	private String type;
+public class Block {
 
-	/**
-	 * Returns items.
-	 *
-	 * @return ArrayList<BlockItem> items.
-	 */
-	public ArrayList<BlockItem> getItems()
-	{
-		return items;
-	}
+    private ArrayList<BlockItem> items;
+    private boolean recMath;
+    private String type;
 
-	/**
-	 * Sets items.
-	 *
-	 * @param items items.
-	 */
-	public void setItems(ArrayList<BlockItem> items)
-	{
-		this.items = items;
-	}
+    public ArrayList<BlockItem> getItems() {
+        return items;
+    }
 
-	/**
-	 * Returns recMath.
-	 *
-	 * @return boolean recMath.
-	 */
-	public boolean getRecMath()
-	{
-		return recMath;
-	}
+    public void setItems(ArrayList<BlockItem> items) {
+        this.items = items;
+    }
 
-	/**
-	 * Sets recMath.
-	 *
-	 * @param recMath recMath.
-	 */
-	public void setRecMath(boolean recMath)
-	{
-		this.recMath = recMath;
-	}
+    public boolean getRecMath() {
+        return recMath;
+    }
 
-	/**
-	 * Returns type.
-	 *
-	 * @return String type.
-	 */
-	public String getType()
-	{
-		return type;
-	}
+    public void setRecMath(boolean recMath) {
+        this.recMath = recMath;
+    }
 
-	/**
-	 * Sets type.
-	 *
-	 * @param type type.
-	 */
-	public void setType(String type)
-	{
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

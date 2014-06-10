@@ -1,38 +1,32 @@
 package jriot.objects;
 
-public class MetaData
-{
-	private String tier;
-	private String type;
-	private boolean isRune;
+public class MetaData {
 
-	public String getTier()
-	{
-		return tier;
-	}
+    private String tier;
+    private String type;
+    private boolean isRune;
 
-	public void setTier(String tier)
-	{
-		this.tier = tier;
-	}
+    public String getTier() {
+        return tier;
+    }
 
-	public String getType()
-	{
-		return type;
-	}
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
 
-	public void setType(String type)
-	{
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public boolean getIsRune()
-	{
-		return isRune;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setIsRune(boolean isRune)
-	{
-		this.isRune = isRune;
-	}
+    public boolean getIsRune() {
+        return isRune;
+    }
+
+    public void setIsRune(boolean isRune) {
+        this.isRune = isRune;
+    }
 }

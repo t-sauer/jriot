@@ -1,47 +1,23 @@
 package jriot.objects;
 
-public class BlockItem
-{
-	private int count;
-	private int id;
+public class BlockItem {
 
-	/**
-	 * Returns count.
-	 *
-	 * @return int count.
-	 */
-	public int getCount()
-	{
-		return count;
-	}
+    private int count;
+    private int id;
 
-	/**
-	 * Sets count.
-	 *
-	 * @param count count.
-	 */
-	public void setCount(int count)
-	{
-		this.count = count;
-	}
+    public int getCount() {
+        return count;
+    }
 
-	/**
-	 * Returns id.
-	 *
-	 * @return int id.
-	 */
-	public int getId()
-	{
-		return id;
-	}
+    public void setCount(int count) {
+        this.count = count;
+    }
 
-	/**
-	 * Sets id.
-	 *
-	 * @param id id.
-	 */
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

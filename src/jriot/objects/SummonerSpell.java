@@ -2,259 +2,213 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
-public class SummonerSpell
-{
-	private ArrayList<Double> cooldown;
-	private ArrayList<Integer> cost;
-	private ArrayList<Object> effect;
-	private ArrayList<String> effectBurn;
-	private ArrayList<String> modes;
-	private ArrayList<SpellVars> vars;
-	private String coolDownBurn;
-	private String costBurn;
-	private String costType;
-	private String description;
-	private String key;
-	private String name;
-	private String rangeBurn;
-	private String resource;
-	private String sanitizedDescription;
-	private String sanitizedTooltip;
-	private String tooltip;
-	private int id;
-	private Image image;
-	private LevelTip leveltip;
-	private int maxrank;
-	private Object range;
-	private int summonerLevel;
+public class SummonerSpell {
 
-	public ArrayList<Double> getCooldown()
-	{
-		return cooldown;
-	}
+    private ArrayList<Double> cooldown;
+    private ArrayList<Integer> cost;
+    private ArrayList<Object> effect;
+    private ArrayList<String> effectBurn;
+    private ArrayList<String> modes;
+    private ArrayList<SpellVars> vars;
+    private String coolDownBurn;
+    private String costBurn;
+    private String costType;
+    private String description;
+    private String key;
+    private String name;
+    private String rangeBurn;
+    private String resource;
+    private String sanitizedDescription;
+    private String sanitizedTooltip;
+    private String tooltip;
+    private int id;
+    private Image image;
+    private LevelTip leveltip;
+    private int maxrank;
+    private Object range;
+    private int summonerLevel;
 
-	public void setCooldown(ArrayList<Double> cooldown)
-	{
-		this.cooldown = cooldown;
-	}
+    public ArrayList<Double> getCooldown() {
+        return cooldown;
+    }
 
-	public ArrayList<Integer> getCost()
-	{
-		return cost;
-	}
+    public void setCooldown(ArrayList<Double> cooldown) {
+        this.cooldown = cooldown;
+    }
 
-	public void setCost(ArrayList<Integer> cost)
-	{
-		this.cost = cost;
-	}
+    public ArrayList<Integer> getCost() {
+        return cost;
+    }
 
-	public ArrayList<Object> getEffect()
-	{
-		return effect;
-	}
+    public void setCost(ArrayList<Integer> cost) {
+        this.cost = cost;
+    }
 
-	public void setEffect(ArrayList<Object> effect)
-	{
-		this.effect = effect;
-	}
+    public ArrayList<Object> getEffect() {
+        return effect;
+    }
 
-	public ArrayList<String> getEffectBurn()
-	{
-		return effectBurn;
-	}
+    public void setEffect(ArrayList<Object> effect) {
+        this.effect = effect;
+    }
 
-	public void setEffectBurn(ArrayList<String> effectBurn)
-	{
-		this.effectBurn = effectBurn;
-	}
+    public ArrayList<String> getEffectBurn() {
+        return effectBurn;
+    }
 
-	public ArrayList<String> getModes()
-	{
-		return modes;
-	}
+    public void setEffectBurn(ArrayList<String> effectBurn) {
+        this.effectBurn = effectBurn;
+    }
 
-	public void setModes(ArrayList<String> modes)
-	{
-		this.modes = modes;
-	}
+    public ArrayList<String> getModes() {
+        return modes;
+    }
 
-	public ArrayList<SpellVars> getVars()
-	{
-		return vars;
-	}
+    public void setModes(ArrayList<String> modes) {
+        this.modes = modes;
+    }
 
-	public void setVars(ArrayList<SpellVars> vars)
-	{
-		this.vars = vars;
-	}
+    public ArrayList<SpellVars> getVars() {
+        return vars;
+    }
 
-	public String getCoolDownBurn()
-	{
-		return coolDownBurn;
-	}
+    public void setVars(ArrayList<SpellVars> vars) {
+        this.vars = vars;
+    }
 
-	public void setCoolDownBurn(String coolDownBurn)
-	{
-		this.coolDownBurn = coolDownBurn;
-	}
+    public String getCoolDownBurn() {
+        return coolDownBurn;
+    }
 
-	public String getCostBurn()
-	{
-		return costBurn;
-	}
+    public void setCoolDownBurn(String coolDownBurn) {
+        this.coolDownBurn = coolDownBurn;
+    }
 
-	public void setCostBurn(String costBurn)
-	{
-		this.costBurn = costBurn;
-	}
+    public String getCostBurn() {
+        return costBurn;
+    }
 
-	public String getCostType()
-	{
-		return costType;
-	}
+    public void setCostBurn(String costBurn) {
+        this.costBurn = costBurn;
+    }
 
-	public void setCostType(String costType)
-	{
-		this.costType = costType;
-	}
+    public String getCostType() {
+        return costType;
+    }
 
-	public String getDescription()
-	{
-		return description;
-	}
+    public void setCostType(String costType) {
+        this.costType = costType;
+    }
 
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public String getKey()
-	{
-		return key;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setKey(String key)
-	{
-		this.key = key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public String getName()
-	{
-		return name;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getRangeBurn()
-	{
-		return rangeBurn;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setRangeBurn(String rangeBurn)
-	{
-		this.rangeBurn = rangeBurn;
-	}
+    public String getRangeBurn() {
+        return rangeBurn;
+    }
 
-	public String getResource()
-	{
-		return resource;
-	}
+    public void setRangeBurn(String rangeBurn) {
+        this.rangeBurn = rangeBurn;
+    }
 
-	public void setResource(String resource)
-	{
-		this.resource = resource;
-	}
+    public String getResource() {
+        return resource;
+    }
 
-	public String getSanitizedDescription()
-	{
-		return sanitizedDescription;
-	}
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
 
-	public void setSanitizedDescription(String sanitizedDescription)
-	{
-		this.sanitizedDescription = sanitizedDescription;
-	}
+    public String getSanitizedDescription() {
+        return sanitizedDescription;
+    }
 
-	public String getSanitizedTooltip()
-	{
-		return sanitizedTooltip;
-	}
+    public void setSanitizedDescription(String sanitizedDescription) {
+        this.sanitizedDescription = sanitizedDescription;
+    }
 
-	public void setSanitizedTooltip(String sanitizedTooltip)
-	{
-		this.sanitizedTooltip = sanitizedTooltip;
-	}
+    public String getSanitizedTooltip() {
+        return sanitizedTooltip;
+    }
 
-	public String getTooltip()
-	{
-		return tooltip;
-	}
+    public void setSanitizedTooltip(String sanitizedTooltip) {
+        this.sanitizedTooltip = sanitizedTooltip;
+    }
 
-	public void setTooltip(String tooltip)
-	{
-		this.tooltip = tooltip;
-	}
+    public String getTooltip() {
+        return tooltip;
+    }
 
-	public int getId()
-	{
-		return id;
-	}
+    public void setTooltip(String tooltip) {
+        this.tooltip = tooltip;
+    }
 
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public Image getImage()
-	{
-		return image;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setImage(Image image)
-	{
-		this.image = image;
-	}
+    public Image getImage() {
+        return image;
+    }
 
-	public LevelTip getLeveltip()
-	{
-		return leveltip;
-	}
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
-	public void setLeveltip(LevelTip leveltip)
-	{
-		this.leveltip = leveltip;
-	}
+    public LevelTip getLeveltip() {
+        return leveltip;
+    }
 
-	public int getMaxrank()
-	{
-		return maxrank;
-	}
+    public void setLeveltip(LevelTip leveltip) {
+        this.leveltip = leveltip;
+    }
 
-	public void setMaxrank(int maxrank)
-	{
-		this.maxrank = maxrank;
-	}
+    public int getMaxrank() {
+        return maxrank;
+    }
 
-	public Object getRange()
-	{
-		return range;
-	}
+    public void setMaxrank(int maxrank) {
+        this.maxrank = maxrank;
+    }
 
-	public void setRange(Object range)
-	{
-		this.range = range;
-	}
+    public Object getRange() {
+        return range;
+    }
 
-	public int getSummonerLevel()
-	{
-		return summonerLevel;
-	}
+    public void setRange(Object range) {
+        this.range = range;
+    }
 
-	public void setSummonerLevel(int summonerLevel)
-	{
-		this.summonerLevel = summonerLevel;
-	}
+    public int getSummonerLevel() {
+        return summonerLevel;
+    }
+
+    public void setSummonerLevel(int summonerLevel) {
+        this.summonerLevel = summonerLevel;
+    }
 }
