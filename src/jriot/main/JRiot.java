@@ -7,17 +7,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 import java.util.Map;
-import jriot.objects.Champion;
-import jriot.objects.ChampionList;
-
-import jriot.objects.League;
-import jriot.objects.MasteryPages;
-import jriot.objects.PlayerStatsSummaryList;
-import jriot.objects.RankedStats;
-import jriot.objects.RecentGames;
-import jriot.objects.RunePages;
-import jriot.objects.Summoner;
-import jriot.objects.Team;
+import jriot.objects.*;
 
 public class JRiot {
 

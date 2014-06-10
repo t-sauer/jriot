@@ -1,29 +1,83 @@
 package jriot.objects;
+import java.util.ArrayList;
 
-public class Mastery {
+public class Mastery
+{
+	private ArrayList<String> description;
+	private int id;
+	private Image image;
+	private String name;
+	private String prereq;
+	private int ranks;
+	private ArrayList<String> sanitizedDescription;
 
-    private int id;
-    private int rank;
+	public ArrayList<String> getDescription()
+	{
+		return description;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setDescription(ArrayList<String> description)
+	{
+		this.description = description;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId()
+	{
+		return id;
+	}
 
-    public int getRank() {
-        return rank;
-    }
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
+	public Image getImage()
+	{
+		return image;
+	}
 
-    @Override
-    public String toString() {
-        return "Mastery [id=" + id + ", rank=" + rank + "]";
-    }
+	public void setImage(Image image)
+	{
+		this.image = image;
+	}
 
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String getPrereq()
+	{
+		return prereq;
+	}
+
+	public void setPrereq(String prereq)
+	{
+		this.prereq = prereq;
+	}
+
+	public int getRanks()
+	{
+		return ranks;
+	}
+
+	public void setRanks(int ranks)
+	{
+		this.ranks = ranks;
+	}
+
+	public ArrayList<String> getSanitizedDescription()
+	{
+		return sanitizedDescription;
+	}
+
+	public void setSanitizedDescription(ArrayList<String> sanitizedDescription)
+	{
+		this.sanitizedDescription = sanitizedDescription;
+	}
 }

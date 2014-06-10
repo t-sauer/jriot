@@ -1,22 +1,25 @@
 package jriot.objects;
 
-import java.util.Map;
 import java.util.ArrayList;
+import java.util.Map;
 
-public class Rune {
-	
+public class BasicData
+{
 	private String colloq;
 	private boolean consumeOnFull;
 	private boolean consumed;
 	private int depth;
+	private String description;
 	private ArrayList<String> from;
 	private Gold gold;
 	private String group;
 	private boolean hideFromAll;
+	private int id;
 	private Image image;
 	private boolean inStore;
 	private ArrayList<String> into;
 	private Map<String, Boolean> maps;
+	private String name;
 	private String plaintext;
 	private String RequiredChampion;
 	private MetaData rune;
@@ -25,11 +28,6 @@ public class Rune {
 	private int stacks;
 	private BasicDataStats stats;
 	private ArrayList<String> tags;
-	private String description;
-	private int id;
-	private String name;
-	private int tier;
-	
 	
 	public String getColloq()
 	{
@@ -260,19 +258,5 @@ public class Rune {
 	{
 		this.tags = tags;
 	}
-
-	public int getTier() {
-		return tier;
-	}
-	public void setTier(int tier) {
-		this.tier = tier;
-	}
-	@Override
-	public String toString() {
-		return "Rune [description=" + description + ", id=" + id + ", name="
-				+ name + ", tier=" + tier + "]";
-	}
-	
-	
 
 }
