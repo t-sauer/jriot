@@ -21,7 +21,6 @@ public class JRiot {
     private final String baseUrl = "https://prod.api.pvp.net/api/lol/";
 
     Gson gson = new Gson();
-    ApiCaller caller = new ApiCaller();
 
     public JRiot(String key, String region) {
         this.apiKey = key;
@@ -56,6 +55,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public ChampionList getChampions() throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.2/champion" + "?api_key=" + apiKey);
         ChampionList championList = gson.fromJson(response, ChampionList.class);
         return championList;
@@ -68,6 +68,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public ChampionList getFreeChampions() throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.2/champion" + "?freeToPlay=true&api_key=" + apiKey);
         ChampionList championList = gson.fromJson(response, ChampionList.class);
         return championList;
@@ -81,6 +82,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Champion getChampion(int id) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.2/champion/" + id + "?freeToPlay=true&api_key=" + apiKey);
         Champion champion = gson.fromJson(response, Champion.class);
         return champion;
@@ -94,6 +96,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public RecentGames getRecentGames(long summonerId) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.3/game/by-summoner/" + summonerId + "/recent" + "?api_key=" + apiKey);
         RecentGames recentGames = gson.fromJson(response, RecentGames.class);
         return recentGames;
@@ -107,6 +110,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public League getChallenger(String queue) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v2.4/league/challenger" + "?type=" + queue + "&api_key=" + apiKey);
         League challenger = gson.fromJson(response, League.class);
         return challenger;
@@ -120,6 +124,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public List<League> getLeagueEntries(long summonerId) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         ArrayList<Long> id = new ArrayList<>();
         id.add(summonerId);
         Map<String, List<League>> leagueEntries = getLeagueEntries(id);
@@ -135,6 +140,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, List<League>> getLeagueEntries(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -153,6 +159,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public List<League> getLeagueEntriesByTeam(String teamId) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         ArrayList<String> id = new ArrayList<>();
         id.add(teamId);
         Map<String, List<League>> leagueEntries = getLeagueEntriesByTeam(id);
@@ -167,6 +174,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, List<League>> getLeagueEntriesByTeam(List<String> teamIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (String i : teamIds) {
             ids = ids + i + ",";
@@ -185,6 +193,7 @@ public class JRiot {
      * @throws jriot.main.JRiotException
      */
     public Map<String, List<League>> getLeagues(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -217,6 +226,7 @@ public class JRiot {
      * @throws jriot.main.JRiotException
      */
     public Map<String, List<League>> getLeaguesByTeams(List<String> teamIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (String i : teamIds) {
             ids = ids + i + ",";
@@ -251,6 +261,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public PlayerStatsSummaryList getPlayerStatsSummaryList(long summonerId, int season) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/summary" + "?season=SEASON" + season + "&api_key=" + apiKey);
         PlayerStatsSummaryList playerStatsSummaryList = gson.fromJson(response, PlayerStatsSummaryList.class);
         return playerStatsSummaryList;
@@ -266,6 +277,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public RankedStats getRankedStats(long summonerId, int season) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/ranked" + "?season=SEASON" + season + "&api_key=" + apiKey);
         RankedStats rankedStats = gson.fromJson(response, RankedStats.class);
         return rankedStats;
@@ -293,6 +305,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, MasteryPages> getMasteryPages(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -325,6 +338,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, RunePages> getRunePages(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -343,6 +357,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Summoner getSummoner(long summonerId) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         ArrayList<Long> id = new ArrayList<>();
         id.add(summonerId);
         Map<String, Summoner> summoner = getSummonersById(id);
@@ -357,6 +372,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, Summoner> getSummonersById(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -390,6 +406,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, Summoner> getSummonersByName(List<String> summonerNames) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String names = "";
         for (String i : summonerNames) {
             names = names + i + ",";
@@ -409,6 +426,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, String> getSummonerNames(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -449,6 +467,7 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, List<Team>> getTeamsBySummoner(List<Long> summonerIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         String ids = "";
         for (long i : summonerIds) {
             ids = ids + i + ",";
@@ -467,13 +486,14 @@ public class JRiot {
      * @throws JRiotException
      */
     public Map<String, Team> getTeams(List<String> teamIds) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
         StringBuilder builder = new StringBuilder();
         for (String s : teamIds) {
             builder.append(s);
             builder.append(",");
         }
         String response = caller.request(this.baseUrl + region + "/v2.3/team/" + builder.toString() + "?api_key=" + apiKey);
-
+        
         Map<String, Team> teams = gson.fromJson(response, new TypeToken<Map<String, Team>>() {
         }.getType());
         return teams;
