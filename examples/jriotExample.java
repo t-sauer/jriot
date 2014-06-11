@@ -27,7 +27,7 @@ public class jriotExample {
             summoner = lol.getSummoner(summoner.getId());
 
             // Get a list of summoners at once
-            List<Long> summonerIds = new ArrayList<Long>();
+            List<Long> summonerIds = new ArrayList<>();
             summonerIds.add(summoner.getId());
 
             Map<String, Summoner> summoners = lol.getSummonersById(summonerIds);
