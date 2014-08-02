@@ -18,8 +18,6 @@ public class JRiot {
     public static final String RANKED_TEAM_5x5 = "RANKED_TEAM_5x5";
     public static final String RANKED_TEAM_3x3 = "RANKED_TEAM_3x3";
 
-    private final String baseUrl = "https://prod.api.pvp.net/api/lol/";
-
     Gson gson = new Gson();
 
     public JRiot(String key, String region) {
@@ -56,7 +54,7 @@ public class JRiot {
      */
     public ChampionList getChampions() throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.2/champion" + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.2/champion" + "?api_key=" + apiKey);
         ChampionList championList = gson.fromJson(response, ChampionList.class);
         return championList;
     }
@@ -69,7 +67,7 @@ public class JRiot {
      */
     public ChampionList getFreeChampions() throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.2/champion" + "?freeToPlay=true&api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.2/champion" + "?freeToPlay=true&api_key=" + apiKey);
         ChampionList championList = gson.fromJson(response, ChampionList.class);
         return championList;
     }
@@ -83,7 +81,7 @@ public class JRiot {
      */
     public Champion getChampion(int id) throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.2/champion/" + id + "?freeToPlay=true&api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.2/champion/" + id + "?freeToPlay=true&api_key=" + apiKey);
         Champion champion = gson.fromJson(response, Champion.class);
         return champion;
     }
@@ -97,7 +95,7 @@ public class JRiot {
      */
     public RecentGames getRecentGames(long summonerId) throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.3/game/by-summoner/" + summonerId + "/recent" + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.3/game/by-summoner/" + summonerId + "/recent" + "?api_key=" + apiKey);
         RecentGames recentGames = gson.fromJson(response, RecentGames.class);
         return recentGames;
     }
@@ -111,7 +109,7 @@ public class JRiot {
      */
     public League getChallenger(String queue) throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v2.4/league/challenger" + "?type=" + queue + "&api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.4/league/challenger" + "?type=" + queue + "&api_key=" + apiKey);
         League challenger = gson.fromJson(response, League.class);
         return challenger;
     }
@@ -145,7 +143,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-summoner/" + ids + "/entry" + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.4/league/by-summoner/" + ids + "/entry" + "?api_key=" + apiKey);
         Map<String, List<League>> leagueEntries = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
         }.getType());
         return leagueEntries;
@@ -179,7 +177,7 @@ public class JRiot {
         for (String i : teamIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-team/" + ids + "/entry" + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.4/league/by-team/" + ids + "/entry" + "?api_key=" + apiKey);
         Map<String, List<League>> leagueEntries = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
         }.getType());
         return leagueEntries;
@@ -198,7 +196,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-summoner/" + ids + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.4/league/by-summoner/" + ids + "?api_key=" + apiKey);
         Map<String, List<League>> leagues = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
         }.getType());
         return leagues;
@@ -231,7 +229,7 @@ public class JRiot {
         for (String i : teamIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v2.4/league/by-team/" + ids + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.4/league/by-team/" + ids + "?api_key=" + apiKey);
         Map<String, List<League>> leagues = gson.fromJson(response, new TypeToken<Map<String, List<League>>>() {
         }.getType());
         return leagues;
@@ -262,7 +260,7 @@ public class JRiot {
      */
     public PlayerStatsSummaryList getPlayerStatsSummaryList(long summonerId, int season) throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/summary" + "?season=SEASON" + season + "&api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.3/stats/by-summoner/" + summonerId + "/summary" + "?season=SEASON" + season + "&api_key=" + apiKey);
         PlayerStatsSummaryList playerStatsSummaryList = gson.fromJson(response, PlayerStatsSummaryList.class);
         return playerStatsSummaryList;
     }
@@ -278,7 +276,7 @@ public class JRiot {
      */
     public RankedStats getRankedStats(long summonerId, int season) throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(this.baseUrl + region + "/v1.3/stats/by-summoner/" + summonerId + "/ranked" + "?season=SEASON" + season + "&api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.3/stats/by-summoner/" + summonerId + "/ranked" + "?season=SEASON" + season + "&api_key=" + apiKey);
         RankedStats rankedStats = gson.fromJson(response, RankedStats.class);
         return rankedStats;
     }
@@ -310,7 +308,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/masteries?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.4/summoner/" + ids + "/masteries?api_key=" + apiKey);
         Map<String, MasteryPages> masteryPages = gson.fromJson(response, new TypeToken<Map<String, MasteryPages>>() {
         }.getType());
         return masteryPages;
@@ -343,7 +341,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/runes?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.4/summoner/" + ids + "/runes?api_key=" + apiKey);
         Map<String, RunePages> masteryPages = gson.fromJson(response, new TypeToken<Map<String, RunePages>>() {
         }.getType());
         return masteryPages;
@@ -378,7 +376,7 @@ public class JRiot {
             ids = ids + i + ",";
         }
         Gson gson = new GsonBuilder().setDateFormat("MM/dd/yyy HH:mm").create();
-        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.4/summoner/" + ids + "?api_key=" + apiKey);
         Map<String, Summoner> summoner = gson.fromJson(response, new TypeToken<Map<String, Summoner>>() {
         }.getType());
         return summoner;
@@ -412,7 +410,7 @@ public class JRiot {
             names = names + i + ",";
         }
         Gson gson = new GsonBuilder().setDateFormat("MM/dd/yyy HH:mm").create();
-        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/by-name/" + names + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.4/summoner/by-name/" + names + "?api_key=" + apiKey);
         Map<String, Summoner> summoner = gson.fromJson(response, new TypeToken<Map<String, Summoner>>() {
         }.getType());
         return summoner;
@@ -431,7 +429,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v1.4/summoner/" + ids + "/name?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v1.4/summoner/" + ids + "/name?api_key=" + apiKey);
         Map<String, String> summonerNameMap = gson.fromJson(response, new TypeToken<Map<String, String>>() {
         }.getType());
         return summonerNameMap;
@@ -472,7 +470,7 @@ public class JRiot {
         for (long i : summonerIds) {
             ids = ids + i + ",";
         }
-        String response = caller.request(this.baseUrl + region + "/v2.3/team/by-summoner/" + ids + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.3/team/by-summoner/" + ids + "?api_key=" + apiKey);
         Map<String, List<Team>> teams = gson.fromJson(response, new TypeToken<Map<String, List<Team>>>() {
         }.getType());
         return teams;
@@ -492,11 +490,15 @@ public class JRiot {
             builder.append(s);
             builder.append(",");
         }
-        String response = caller.request(this.baseUrl + region + "/v2.3/team/" + builder.toString() + "?api_key=" + apiKey);
+        String response = caller.request(generateBaseUrl() + "/v2.3/team/" + builder.toString() + "?api_key=" + apiKey);
         
         Map<String, Team> teams = gson.fromJson(response, new TypeToken<Map<String, Team>>() {
         }.getType());
         return teams;
+    }
+
+    private String generateBaseUrl() {
+        return  "https://" + region + ".api.pvp.net/api/lol/" + region;
     }
 
 }
