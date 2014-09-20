@@ -40,7 +40,7 @@ public class JRiot {
     /**
      * Sets the region where to get the data from.
      *
-     * @param region the region (EUNE, EUW, NA, BR, TR).
+     * @param region the region (EUNE, EUW, NA, BR, TR, KR, RU, OCE).
      */
     public void setRegion(String region) {
         this.region = region;
@@ -54,11 +54,25 @@ public class JRiot {
      */
     public ChampionList getChampions() throws JRiotException {
         ApiCaller caller = new ApiCaller();
-        String response = caller.request(generateBaseUrl() + "/v1.2/champion" + "?api_key=" + apiKey);
+        String response = caller.request("https://global.api.pvp.net/api/lol/static-data/" + region + "/v1.2/champion" + "?api_key=" + apiKey);
         ChampionList championList = gson.fromJson(response, ChampionList.class);
         return championList;
     }
 
+
+    /**
+     * Retrieve all champions for the given locale.
+     *
+     * @param locale locale of static data
+     * @return List of all champions.
+     * @throws JRiotException
+     */
+    public ChampionList getChampions(String locale) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
+        String response = caller.request("https://global.api.pvp.net/api/lol/static-data/" + region + "/v1.2/champion" + "?locale=" + locale + "&api_key=" + apiKey);
+        ChampionList championList = gson.fromJson(response, ChampionList.class);
+        return championList;
+    }
     /**
      * Retrieve all free champions.
      *
@@ -86,6 +100,34 @@ public class JRiot {
         return champion;
     }
 
+
+    /**
+     * Retrieve all runes.
+     *
+     * @return List of all runes.
+     * @throws JRiotException
+     */
+    public RuneList getRunes() throws JRiotException {
+        ApiCaller caller = new ApiCaller();
+        String response = caller.request("https://global.api.pvp.net/api/lol/static-data/" + region + "/v1.2/rune" + "?api_key=" + apiKey);
+        RuneList runeList = gson.fromJson(response, RuneList.class);
+        return runeList;
+    }
+
+    /**
+     * Retrieve all runes for the given locale.
+     *
+     * @param locale locale of static data
+     * @return List of all runes.
+     * @throws JRiotException
+     */
+    public RuneList getRunes(String locale) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
+        String response = caller.request("https://global.api.pvp.net/api/lol/static-data/" + region + "/v1.2/rune" + "?locale=" + locale + "&api_key=" + apiKey);
+        RuneList runeList = gson.fromJson(response, RuneList.class);
+        return runeList;
+    }
+
     /**
      * Get recent games by summoner ID.
      *
@@ -98,6 +140,22 @@ public class JRiot {
         String response = caller.request(generateBaseUrl() + "/v1.3/game/by-summoner/" + summonerId + "/recent" + "?api_key=" + apiKey);
         RecentGames recentGames = gson.fromJson(response, RecentGames.class);
         return recentGames;
+    }
+
+    /**
+     * Get new match history by summoner ID.
+     *
+     * @param summonerId Id of a summoner.
+     * @return PlayerHistory objects which contains the player's recent match sumamries.
+     * @throws JRiotException
+     */
+    public PlayerHistory getPlayerHistory(long summonerId) throws JRiotException {
+        ApiCaller caller = new ApiCaller();
+
+        PlayerHistory playerHistory = null;
+        String response = caller.request(generateBaseUrl() + "/v2.2/matchhistory/" + summonerId + "?api_key=" + apiKey);
+        playerHistory = gson.fromJson(response, PlayerHistory.class);        
+        return playerHistory;
     }
 
     /**
