@@ -50,6 +50,9 @@ public class jriotExample {
             // Get recent games of a summoner
             RecentGames recentGames = lol.getRecentGames(summoner.getId());
 
+            // Get new match history of a summoner
+            PlayerHistory playerHistory = lol.getPlayerHistory(summoner.getId());
+
             // Get a list of teams of a summoner
             List<Team> teams = lol.getTeams(summoner.getId());
         } catch (JRiotException e) {
