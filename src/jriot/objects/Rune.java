@@ -3,6 +3,7 @@ package jriot.objects;
 import java.util.Map;
 import java.util.ArrayList;
 
+//Updated for Match Version 2.2
 public class Rune {
 
     private String colloq;
@@ -29,8 +30,29 @@ public class Rune {
     private int id;
     private String name;
     private int tier;
+    
+    private long rank;
+    private long runeId;
+    
+    
 
-    public String getColloq() {
+    public long getRank() {
+		return rank;
+	}
+
+	public void setRank(long rank) {
+		this.rank = rank;
+	}
+
+	public long getRuneId() {
+		return runeId;
+	}
+
+	public void setRuneId(long runeId) {
+		this.runeId = runeId;
+	}
+
+	public String getColloq() {
         return colloq;
     }
 
