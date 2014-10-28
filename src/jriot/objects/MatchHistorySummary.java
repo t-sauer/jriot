@@ -3,6 +3,7 @@ package jriot.objects;
 public class MatchHistorySummary {
 
     private int assists;
+    private long date;
     private int deaths;
     private long gameId;
     private String gameMode;
@@ -13,7 +14,15 @@ public class MatchHistorySummary {
     private String opposingTeamName;
     private boolean win;
 
-    public int getAssists() {
+    public long getDate() {
+		return date;
+	}
+
+	public void setDate(long date) {
+		this.date = date;
+	}
+
+	public int getAssists() {
         return assists;
     }
 
