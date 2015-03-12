@@ -2,6 +2,7 @@ package jriot.objects;
 
 import java.util.ArrayList;
 
+//Updated for Match Version 2.2
 public class Mastery {
 
     private ArrayList<String> description;
@@ -11,8 +12,26 @@ public class Mastery {
     private String prereq;
     private int ranks;
     private ArrayList<String> sanitizedDescription;
+    private int rank;
+    private long masterId;
+    
+    public int getRank() {
+		return rank;
+	}
 
-    public ArrayList<String> getDescription() {
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public long getMasterId() {
+		return masterId;
+	}
+
+	public void setMasterId(long masterId) {
+		this.masterId = masterId;
+	}
+
+	public ArrayList<String> getDescription() {
         return description;
     }
 

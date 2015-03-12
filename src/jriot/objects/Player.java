@@ -1,12 +1,41 @@
 package jriot.objects;
 
+//Updated for Match Version 2.2
 public class Player {
 
     private int championId;
     private long summonerId;
     private int teamId;
+    private int profileIcon;
+    private String summonerName;
+    private String matchHistoryUri;
 
-    public int getChampionId() {
+
+    public int getProfileIcon() {
+		return profileIcon;
+	}
+
+	public void setProfileIcon(int profileIcon) {
+		this.profileIcon = profileIcon;
+	}
+
+	public String getSummonerName() {
+		return summonerName;
+	}
+
+	public void setSummonerName(String summonerName) {
+		this.summonerName = summonerName;
+	}
+
+	public String getMatchHistoryUri() {
+		return matchHistoryUri;
+	}
+
+	public void setMatchHistoryUri(String matchHistoryUri) {
+		this.matchHistoryUri = matchHistoryUri;
+	}
+
+	public int getChampionId() {
         return championId;
     }
 

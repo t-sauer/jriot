@@ -496,7 +496,71 @@ public class JRiot {
         }.getType());
         return teams;
     }
-
+    
+    /**
+     * Get the current game for a specified player in a region
+     *
+     * @param platformId
+     * @param summonerId
+     * @return currentGame
+     * @throws JRiotException
+     */
+    public CurrentGameInfo getPlayersCurrentGame(String platformId, long summonerId) throws JRiotException{
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/observer-mode/rest/consumer/getSpectatorGameInfo/" + platformId + "/" + summonerId);
+    	CurrentGameInfo currentGame = gson.fromJson(response, new TypeToken<CurrentGameInfo>(){}.getType());
+    	return currentGame;
+    }
+    
+    /**
+     * Get list of featured games.
+     *
+     * @return featuredGames
+     * @throws JRiotException
+     */
+    public FeaturedGames getFeaturedGames() throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/observer-mode/rest/featured");
+    	FeaturedGames featuredGames = gson.fromJson(response, new TypeToken<FeaturedGames>(){}.getType());
+    	return featuredGames;
+    }
+    
+    public List<Shard> lolStatus() throws JRiotException{
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request("http://status.leagueoflegends.com/shards");
+    	List<Shard> status = gson.fromJson(response, new TypeToken<List<Shard>>(){}.getType());
+    	return status;
+    }
+    
+    public List<Shard> lolStatus(String targetRegion) throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request("http://status.leagueoflegends.com/shards/" + targetRegion);
+    	List<Shard> status = gson.fromJson(response, new TypeToken<List<Shard>>(){}.getType());
+    	return status;
+    }
+    
+    public MatchDetail getMatch(String matchId) throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/v2.2/match/" + matchId + "?api_key=" + apiKey);
+    	MatchDetail match = gson.fromJson(response,  MatchDetail.class);
+    	return match;
+    }
+    
+    public MatchDetail getMatchWithTimeline(long matchId) throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/v2.2/match/" + matchId + "?includeTimeline=true&api_key=" + apiKey);
+    	MatchDetail match = gson.fromJson(response,  MatchDetail.class);
+    	return match;
+    }
+    
+    public PlayerHistory getMatchHistory(long summonerId) throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/v2.2/matchhistory/" + summonerId + "?api_key=" + apiKey);
+    	PlayerHistory pHistory = gson.fromJson(response, PlayerHistory.class);
+    	return pHistory;
+    }
+    
+    
     private String generateBaseUrl() {
         return  "https://" + region + ".api.pvp.net/api/lol/" + region;
     }
