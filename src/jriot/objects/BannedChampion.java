@@ -4,6 +4,7 @@ package jriot.objects;
 public class BannedChampion {
 	private int championId;
 	private int pickTurn;
+	private long teamId;
 
 	public int getChampionId() {
 		return championId;
@@ -17,6 +18,13 @@ public class BannedChampion {
 	public void setPickTurn(int pickTurn) {
 		this.pickTurn = pickTurn;
 	}
+	public long getTeamId() {
+		return teamId;
+	}
+	public void setTeamId(long teamId) {
+		this.teamId = teamId;
+	}
+	
 	
 	
 }

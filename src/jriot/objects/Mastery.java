@@ -12,14 +12,14 @@ public class Mastery {
     private String prereq;
     private int ranks;
     private ArrayList<String> sanitizedDescription;
-    private long rank;
+    private int rank;
     private long masterId;
     
-    public long getRank() {
+    public int getRank() {
 		return rank;
 	}
 
-	public void setRank(long rank) {
+	public void setRank(int rank) {
 		this.rank = rank;
 	}
 

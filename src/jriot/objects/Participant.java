@@ -2,7 +2,7 @@ package jriot.objects;
 
 import java.util.List;
 
-//Updated For Match Version 2.2
+//Updated For CurrentGameInfo v1.0
 
 public class Participant {
 	private int championId;
@@ -14,6 +14,11 @@ public class Participant {
 	private List<Rune> runes;
 	private ParticipantStats stats;
 	private ParticipantTimeline timeline;
+	private boolean bot;
+	private long profileIconId;
+	private long summonerId;
+	private long summonerName;
+	
 	
 	public int getChampionId() {
 		return championId;
@@ -68,6 +73,30 @@ public class Participant {
 	}
 	public void setTimeline(ParticipantTimeline timeline) {
 		this.timeline = timeline;
+	}
+	public boolean isBot() {
+		return bot;
+	}
+	public void setBot(boolean bot) {
+		this.bot = bot;
+	}
+	public long getProfileIconId() {
+		return profileIconId;
+	}
+	public void setProfileIconId(long profileIconId) {
+		this.profileIconId = profileIconId;
+	}
+	public long getSummonerId() {
+		return summonerId;
+	}
+	public void setSummonerId(long summonerId) {
+		this.summonerId = summonerId;
+	}
+	public long getSummonerName() {
+		return summonerName;
+	}
+	public void setSummonerName(long summonerName) {
+		this.summonerName = summonerName;
 	}
 	
 	

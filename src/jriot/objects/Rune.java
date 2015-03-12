@@ -32,6 +32,7 @@ public class Rune {
     private int tier;
     
     private long rank;
+    private int count;
     private long runeId;
     
     
@@ -244,7 +245,15 @@ public class Rune {
         this.tier = tier;
     }
 
-    @Override
+    public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	@Override
     public String toString() {
         return "Rune [description=" + description + ", id=" + id + ", name="
                 + name + ", tier=" + tier + "]";

@@ -497,6 +497,34 @@ public class JRiot {
         return teams;
     }
     
+    /**
+     * Get the current game for a specified player in a region
+     *
+     * @param platformId
+     * @param summonerId
+     * @return currentGame
+     * @throws JRiotException
+     */
+    public CurrentGameInfo getPlayersCurrentGame(String platformId, long summonerId) throws JRiotException{
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/observer-mode/rest/consumer/getSpectatorGameInfo/" + platformId + "/" + summonerId);
+    	CurrentGameInfo currentGame = gson.fromJson(response, new TypeToken<CurrentGameInfo>(){}.getType());
+    	return currentGame;
+    }
+    
+    /**
+     * Get list of featured games.
+     *
+     * @return featuredGames
+     * @throws JRiotException
+     */
+    public FeaturedGames getFeaturedGames() throws JRiotException {
+    	ApiCaller caller = new ApiCaller();
+    	String response = caller.request(generateBaseUrl() + "/observer-mode/rest/featured");
+    	FeaturedGames featuredGames = gson.fromJson(response, new TypeToken<FeaturedGames>(){}.getType());
+    	return featuredGames;
+    }
+    
     public List<Shard> lolStatus() throws JRiotException{
     	ApiCaller caller = new ApiCaller();
     	String response = caller.request("http://status.leagueoflegends.com/shards");
